@@ -1,0 +1,126 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= nom_ss_100C_1v60 Corner ===================================
+
+Startpoint: received[0] (input port clocked by clk)
+Endpoint: SMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 ^ input external delay
+     1    0.002900    0.034019    0.016286   20.016287 ^ received[0] (in)
+                                                         received[0] (net)
+                      0.034019    0.000000   20.016287 ^ BMU/received[0] (Branch_Metrics)
+     1    0.004000    0.055849    1.465578   21.481865 ^ BMU/bm_10_11[0] (Branch_Metrics)
+                                                         bm_10_11[0] (net)
+                      0.055849    0.000000   21.481865 ^ PMU_Top/bm_10_11[0] (Path_Metric_Unit)
+     1    0.003400    0.051654    3.811623   25.293488 ^ PMU_Top/servivor_select_11 (Path_Metric_Unit)
+                                                         servivor_select_11 (net)
+                      0.051654    0.000000   25.293488 ^ SMU_Top/survivor_select_11 (Survivor_Memory_Unit)
+                                             25.293488   data arrival time
+
+                      0.150000  100.000000  100.000000   clock clk (rise edge)
+                                  0.000000  100.000000   clock network delay (ideal)
+                                 -0.250000   99.750000   clock uncertainty
+                                  0.000000   99.750000   clock reconvergence pessimism
+                                             99.750000 ^ SMU_Top/clk (Survivor_Memory_Unit)
+                                 -1.929030   97.820969   library setup time
+                                             97.820969   data required time
+---------------------------------------------------------------------------------------------
+                                             97.820969   data required time
+                                            -25.293488   data arrival time
+---------------------------------------------------------------------------------------------
+                                             72.527481   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= nom_ss_100C_1v60 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= nom_ss_100C_1v60 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 53 unannotated drivers.
+ clk
+ received[0]
+ received[1]
+ rst_n
+ start
+ BMU/bm_00_00[0]
+ BMU/bm_00_00[1]
+ BMU/bm_00_10[0]
+ BMU/bm_00_10[1]
+ BMU/bm_01_00[0]
+ BMU/bm_01_00[1]
+ BMU/bm_01_10[0]
+ BMU/bm_01_10[1]
+ BMU/bm_10_01[0]
+ BMU/bm_10_01[1]
+ BMU/bm_10_11[0]
+ BMU/bm_10_11[1]
+ BMU/bm_11_01[0]
+ BMU/bm_11_01[1]
+ BMU/bm_11_11[0]
+ BMU/bm_11_11[1]
+ CTRL/clr_me
+ CTRL/frame_done
+ MPM/winner_state[0]
+ MPM/winner_state[1]
+ PMU_Top/current_metric_00[0]
+ PMU_Top/current_metric_00[1]
+ PMU_Top/current_metric_00[2]
+ PMU_Top/current_metric_00[3]
+ PMU_Top/current_metric_01[0]
+ PMU_Top/current_metric_01[1]
+ PMU_Top/current_metric_01[2]
+ PMU_Top/current_metric_01[3]
+ PMU_Top/current_metric_10[0]
+ PMU_Top/current_metric_10[1]
+ PMU_Top/current_metric_10[2]
+ PMU_Top/current_metric_10[3]
+ PMU_Top/current_metric_11[0]
+ PMU_Top/current_metric_11[1]
+ PMU_Top/current_metric_11[2]
+ PMU_Top/current_metric_11[3]
+ PMU_Top/servivor_select_00
+ PMU_Top/servivor_select_01
+ PMU_Top/servivor_select_10
+ PMU_Top/servivor_select_11
+ SMU_Top/decoded_out[0]
+ SMU_Top/decoded_out[1]
+ SMU_Top/decoded_out[2]
+ SMU_Top/decoded_out[3]
+ SMU_Top/decoded_out[4]
+ SMU_Top/decoded_out[5]
+ SMU_Top/decoded_out[6]
+ SMU_Top/decoded_out[7]
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================

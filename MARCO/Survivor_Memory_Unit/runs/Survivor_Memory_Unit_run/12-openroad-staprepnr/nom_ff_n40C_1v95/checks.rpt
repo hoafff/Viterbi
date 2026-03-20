@@ -1,0 +1,209 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= nom_ff_n40C_1v95 Corner ===================================
+
+Startpoint: rst_n (input port clocked by clk)
+Endpoint: _083_ (recovery check against rising-edge clock clk)
+Path Group: asynchronous
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 ^ input external delay
+    34    0.122978    0.417087    0.286351   20.286350 ^ rst_n (in)
+                                                         rst_n (net)
+                      0.417087    0.000000   20.286350 ^ _083_/RESET_B (sky130_fd_sc_hd__dfrtp_2)
+                                             20.286350   data arrival time
+
+                      0.150000  100.000000  100.000000   clock clk (rise edge)
+                                  0.000000  100.000000   clock network delay (ideal)
+                                 -0.250000   99.750000   clock uncertainty
+                                  0.000000   99.750000   clock reconvergence pessimism
+                                             99.750000 ^ _083_/CLK (sky130_fd_sc_hd__dfrtp_2)
+                                  0.054978   99.804977   library recovery time
+                                             99.804977   data required time
+---------------------------------------------------------------------------------------------
+                                             99.804977   data required time
+                                            -20.286350   data arrival time
+---------------------------------------------------------------------------------------------
+                                             79.518623   slack (MET)
+
+
+Startpoint: winner_state[1] (input port clocked by clk)
+Endpoint: _113_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 ^ input external delay
+    18    0.033867    0.119296    0.080936   20.080936 ^ winner_state[1] (in)
+                                                         winner_state[1] (net)
+                      0.119296    0.000000   20.080936 ^ _062_/A_N (sky130_fd_sc_hd__and3b_2)
+     1    0.002246    0.026903    0.129365   20.210302 v _062_/X (sky130_fd_sc_hd__and3b_2)
+                                                         _026_ (net)
+                      0.026903    0.000000   20.210302 v _066_/A2 (sky130_fd_sc_hd__o41a_2)
+     1    0.002059    0.041858    0.264190   20.474491 v _066_/X (sky130_fd_sc_hd__o41a_2)
+                                                         _004_ (net)
+                      0.041858    0.000000   20.474491 v _113_/D (sky130_fd_sc_hd__dfrtp_2)
+                                             20.474491   data arrival time
+
+                      0.150000  100.000000  100.000000   clock clk (rise edge)
+                                  0.000000  100.000000   clock network delay (ideal)
+                                 -0.250000   99.750000   clock uncertainty
+                                  0.000000   99.750000   clock reconvergence pessimism
+                                             99.750000 ^ _113_/CLK (sky130_fd_sc_hd__dfrtp_2)
+                                 -0.065813   99.684189   library setup time
+                                             99.684189   data required time
+---------------------------------------------------------------------------------------------
+                                             99.684189   data required time
+                                            -20.474491   data arrival time
+---------------------------------------------------------------------------------------------
+                                             79.209702   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= nom_ff_n40C_1v95 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= nom_ff_n40C_1v95 Corner ===================================
+
+max fanout
+
+Pin                                   Limit Fanout  Slack
+---------------------------------------------------------
+rst_n                                    10     34    -24 (VIOLATED)
+winner_state[0]                          10     23    -13 (VIOLATED)
+winner_state[1]                          10     18     -8 (VIOLATED)
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 97 unannotated drivers.
+ clk
+ rst_n
+ survivor_select_00
+ survivor_select_01
+ survivor_select_10
+ survivor_select_11
+ winner_state[0]
+ winner_state[1]
+ _030_/X
+ _031_/X
+ _032_/X
+ _033_/X
+ _034_/X
+ _035_/X
+ _036_/X
+ _037_/X
+ _038_/X
+ _039_/X
+ _040_/X
+ _041_/X
+ _042_/X
+ _043_/X
+ _044_/X
+ _045_/X
+ _046_/X
+ _047_/X
+ _048_/X
+ _049_/X
+ _050_/X
+ _051_/X
+ _052_/X
+ _053_/X
+ _054_/X
+ _055_/Y
+ _056_/X
+ _057_/X
+ _058_/X
+ _059_/X
+ _060_/X
+ _061_/X
+ _062_/X
+ _063_/X
+ _064_/X
+ _065_/X
+ _066_/X
+ _067_/X
+ _068_/X
+ _069_/X
+ _070_/X
+ _071_/X
+ _072_/X
+ _073_/X
+ _074_/X
+ _075_/X
+ _076_/X
+ _077_/X
+ _078_/X
+ _079_/X
+ _080_/X
+ _081_/X
+ _082_/X
+ _083_/Q
+ _084_/Q
+ _085_/Q
+ _086_/Q
+ _087_/Q
+ _088_/Q
+ _089_/Q
+ _090_/Q
+ _091_/Q
+ _092_/Q
+ _093_/Q
+ _094_/Q
+ _095_/Q
+ _096_/Q
+ _097_/Q
+ _098_/Q
+ _099_/Q
+ _100_/Q
+ _101_/Q
+ _102_/Q
+ _103_/Q
+ _104_/Q
+ _105_/Q
+ _106_/Q
+ _107_/Q
+ _108_/Q
+ _109_/Q
+ _110_/Q
+ _111_/Q
+ _112_/Q
+ _113_/Q
+ _114_/Q
+ _115_/Q
+ _116_/Q
+ _117_/HI
+ _117_/LO
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 3
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There is 1 unconstrained endpoint.
+  _102_/D

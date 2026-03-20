@@ -1,0 +1,253 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO Survivor_Memory_Unit
+  CLASS BLOCK ;
+  FOREIGN Survivor_Memory_Unit ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 60.000 BY 100.000 ;
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT -5.380 -0.020 -3.780 97.940 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -5.380 -0.020 65.180 1.580 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -5.380 96.340 65.180 97.940 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 63.580 -0.020 65.180 97.940 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 24.340 -0.020 25.940 97.940 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -5.380 30.030 65.180 31.630 ;
+    END
+  END VGND
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT -2.080 3.280 -0.480 94.640 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -2.080 3.280 61.880 4.880 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -2.080 93.040 61.880 94.640 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 60.280 3.280 61.880 94.640 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 21.040 -0.020 22.640 97.940 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -5.380 26.730 65.180 28.330 ;
+    END
+  END VPWR
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.852000 ;
+    PORT
+      LAYER met2 ;
+        RECT 14.880 49.940 15.020 101.000 ;
+    END
+  END clk
+  PIN decoded_out[0]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
+    PORT
+      LAYER met3 ;
+        RECT 51.890 6.990 61.000 7.290 ;
+    END
+  END decoded_out[0]
+  PIN decoded_out[1]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
+    PORT
+      LAYER met3 ;
+        RECT 51.890 19.230 61.000 19.530 ;
+    END
+  END decoded_out[1]
+  PIN decoded_out[2]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
+    PORT
+      LAYER met3 ;
+        RECT 52.350 31.470 61.000 31.770 ;
+    END
+  END decoded_out[2]
+  PIN decoded_out[3]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
+    PORT
+      LAYER met3 ;
+        RECT 52.350 43.710 61.000 44.010 ;
+    END
+  END decoded_out[3]
+  PIN decoded_out[4]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
+    PORT
+      LAYER met3 ;
+        RECT 52.350 55.950 61.000 56.250 ;
+    END
+  END decoded_out[4]
+  PIN decoded_out[5]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
+    PORT
+      LAYER met3 ;
+        RECT 52.350 68.190 61.000 68.490 ;
+    END
+  END decoded_out[5]
+  PIN decoded_out[6]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
+    PORT
+      LAYER met3 ;
+        RECT 52.350 80.430 61.000 80.730 ;
+    END
+  END decoded_out[6]
+  PIN decoded_out[7]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
+    PORT
+      LAYER met3 ;
+        RECT 52.350 92.670 61.000 92.970 ;
+    END
+  END decoded_out[7]
+  PIN rst_n
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met2 ;
+        RECT 44.780 85.980 44.920 101.000 ;
+    END
+  END rst_n
+  PIN survivor_select_00
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
+    PORT
+      LAYER met3 ;
+        RECT -1.000 13.110 7.450 13.410 ;
+    END
+  END survivor_select_00
+  PIN survivor_select_01
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
+    PORT
+      LAYER met3 ;
+        RECT -1.000 37.590 4.230 37.890 ;
+    END
+  END survivor_select_01
+  PIN survivor_select_10
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
+    PORT
+      LAYER met3 ;
+        RECT -1.000 62.070 4.230 62.370 ;
+    END
+  END survivor_select_10
+  PIN survivor_select_11
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
+    PORT
+      LAYER met3 ;
+        RECT -1.000 86.550 4.230 86.850 ;
+    END
+  END survivor_select_11
+  PIN winner_state[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met2 ;
+        RECT 14.880 -1.000 15.020 11.940 ;
+    END
+  END winner_state[0]
+  PIN winner_state[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met2 ;
+        RECT 44.780 -1.000 44.920 11.940 ;
+    END
+  END winner_state[1]
+  OBS
+      LAYER nwell ;
+        RECT 5.330 10.795 54.470 87.125 ;
+      LAYER li1 ;
+        RECT 5.520 10.795 54.280 87.125 ;
+      LAYER met1 ;
+        RECT 4.210 10.640 54.280 87.280 ;
+      LAYER met2 ;
+        RECT 4.230 49.660 14.600 93.005 ;
+        RECT 15.300 85.700 44.500 93.005 ;
+        RECT 45.200 85.700 52.800 93.005 ;
+        RECT 15.300 49.660 52.800 85.700 ;
+        RECT 4.230 12.220 52.800 49.660 ;
+        RECT 4.230 6.955 14.600 12.220 ;
+        RECT 15.300 6.955 44.500 12.220 ;
+        RECT 45.200 6.955 52.800 12.220 ;
+      LAYER met3 ;
+        RECT 4.205 92.270 51.950 92.985 ;
+        RECT 4.205 87.250 52.375 92.270 ;
+        RECT 4.630 86.150 52.375 87.250 ;
+        RECT 4.205 81.130 52.375 86.150 ;
+        RECT 4.205 80.030 51.950 81.130 ;
+        RECT 4.205 68.890 52.375 80.030 ;
+        RECT 4.205 67.790 51.950 68.890 ;
+        RECT 4.205 62.770 52.375 67.790 ;
+        RECT 4.630 61.670 52.375 62.770 ;
+        RECT 4.205 56.650 52.375 61.670 ;
+        RECT 4.205 55.550 51.950 56.650 ;
+        RECT 4.205 44.410 52.375 55.550 ;
+        RECT 4.205 43.310 51.950 44.410 ;
+        RECT 4.205 38.290 52.375 43.310 ;
+        RECT 4.630 37.190 52.375 38.290 ;
+        RECT 4.205 32.170 52.375 37.190 ;
+        RECT 4.205 31.070 51.950 32.170 ;
+        RECT 4.205 19.930 52.375 31.070 ;
+        RECT 4.205 18.830 51.490 19.930 ;
+        RECT 4.205 13.810 52.375 18.830 ;
+        RECT 7.850 12.710 52.375 13.810 ;
+        RECT 4.205 7.690 52.375 12.710 ;
+        RECT 4.205 6.975 51.490 7.690 ;
+  END
+END Survivor_Memory_Unit
+END LIBRARY
+

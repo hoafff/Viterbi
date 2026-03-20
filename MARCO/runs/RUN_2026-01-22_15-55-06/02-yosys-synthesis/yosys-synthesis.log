@@ -1,0 +1,803 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)
+Loaded SDC plugin
+
+1. Executing Liberty frontend: /home/edabk/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+2. Executing Liberty frontend: /home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/Branch_Metrics/runs/Branch_Metrics_run/final/lib/max_ss_100C_1v60/Branch_Metrics__max_ss_100C_1v60.lib
+Imported 1 cell types from liberty file.
+
+3. Executing Liberty frontend: /home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/Controller/runs/Controller_run/final/lib/max_ss_100C_1v60/Controller__max_ss_100C_1v60.lib
+Imported 1 cell types from liberty file.
+
+4. Executing Liberty frontend: /home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/Path_Metric_Unit/runs/Path_Metric_Unit_run/final/lib/max_ss_100C_1v60/Path_Metric_Unit__max_ss_100C_1v60.lib
+Imported 1 cell types from liberty file.
+
+5. Executing Liberty frontend: /home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/Maximum_Path_Memory/runs/Maximum_Path_Memory_run/final/lib/max_ss_100C_1v60/Maximum_Path_Memory__max_ss_100C_1v60.lib
+Imported 1 cell types from liberty file.
+
+6. Executing Liberty frontend: /home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/Survivor_Memory_Unit/runs/Survivor_Memory_Unit_run/final/lib/max_ss_100C_1v60/Survivor_Memory_Unit__max_ss_100C_1v60.lib
+Imported 1 cell types from liberty file.
+[INFO] Using SDC file '/home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/runs/RUN_2026-01-22_15-55-06/02-yosys-synthesis/synthesis.abc.sdc' for ABC…
+
+7. Executing Verilog-2005 frontend: /home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/hdl/top_viterbi.v
+Parsing SystemVerilog input from `/home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/hdl/top_viterbi.v' to AST representation.
+Storing AST representation for module `$abstract\Viterbi_Top'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: /home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/hdl/Branch_Metrics.v
+Parsing SystemVerilog input from `/home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/hdl/Branch_Metrics.v' to AST representation.
+Storing AST representation for module `$abstract\Branch_Metrics'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: /home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/hdl/Controller.v
+Parsing SystemVerilog input from `/home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/hdl/Controller.v' to AST representation.
+Storing AST representation for module `$abstract\Controller'.
+Successfully finished Verilog frontend.
+
+10. Executing Verilog-2005 frontend: /home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/hdl/Maximum_Path_Memory.v
+Parsing SystemVerilog input from `/home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/hdl/Maximum_Path_Memory.v' to AST representation.
+Storing AST representation for module `$abstract\Maximum_Path_Memory'.
+Successfully finished Verilog frontend.
+
+11. Executing Verilog-2005 frontend: /home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/hdl/Path_Metric_Unit.v
+Parsing SystemVerilog input from `/home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/hdl/Path_Metric_Unit.v' to AST representation.
+Storing AST representation for module `$abstract\Path_Metric_Unit'.
+Successfully finished Verilog frontend.
+
+12. Executing Verilog-2005 frontend: /home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/hdl/Survivor_Memory_Unit.v
+Parsing SystemVerilog input from `/home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/hdl/Survivor_Memory_Unit.v' to AST representation.
+Storing AST representation for module `$abstract\Survivor_Memory_Unit'.
+Successfully finished Verilog frontend.
+
+13. Executing Verilog-2005 frontend: /home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/hdl/Add_Compare_Select.v
+Parsing SystemVerilog input from `/home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/hdl/Add_Compare_Select.v' to AST representation.
+Storing AST representation for module `$abstract\Add_compare_select'.
+Successfully finished Verilog frontend.
+
+14. Executing Verilog-2005 frontend: /home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/hdl/Metric_Register.v
+Parsing SystemVerilog input from `/home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/hdl/Metric_Register.v' to AST representation.
+Storing AST representation for module `$abstract\Metric_register'.
+Successfully finished Verilog frontend.
+
+15. Executing Verilog-2005 frontend: /home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/hdl/Register_exchange.v
+Parsing SystemVerilog input from `/home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/hdl/Register_exchange.v' to AST representation.
+Storing AST representation for module `$abstract\Register_exchange'.
+Successfully finished Verilog frontend.
+
+16. Executing Verilog-2005 frontend: /home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/hdl/Output_Register_Location.v
+Parsing SystemVerilog input from `/home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/hdl/Output_Register_Location.v' to AST representation.
+Storing AST representation for module `$abstract\Output_Register_Location'.
+Successfully finished Verilog frontend.
+
+17. Executing HIERARCHY pass (managing design hierarchy).
+
+18. Executing AST frontend in derive mode using pre-parsed AST for module `\Viterbi_Top'.
+Generating RTLIL representation for module `\Viterbi_Top'.
+
+18.1. Analyzing design hierarchy..
+Top module:  \Viterbi_Top
+
+18.2. Analyzing design hierarchy..
+Top module:  \Viterbi_Top
+Removing unused module `$abstract\Output_Register_Location'.
+Removing unused module `$abstract\Register_exchange'.
+Removing unused module `$abstract\Metric_register'.
+Removing unused module `$abstract\Add_compare_select'.
+Removing unused module `$abstract\Survivor_Memory_Unit'.
+Removing unused module `$abstract\Path_Metric_Unit'.
+Removing unused module `$abstract\Maximum_Path_Memory'.
+Removing unused module `$abstract\Controller'.
+Removing unused module `$abstract\Branch_Metrics'.
+Removing unused module `$abstract\Viterbi_Top'.
+Removed 10 unused modules.
+Renaming module Viterbi_Top to Viterbi_Top.
+
+19. Generating Graphviz representation of design.
+Writing dot description to `/home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/runs/RUN_2026-01-22_15-55-06/02-yosys-synthesis/hierarchy.dot'.
+Dumping module Viterbi_Top to page 1.
+
+20. Executing TRIBUF pass.
+
+21. Executing HIERARCHY pass (managing design hierarchy).
+
+21.1. Analyzing design hierarchy..
+Top module:  \Viterbi_Top
+
+21.2. Analyzing design hierarchy..
+Top module:  \Viterbi_Top
+Removed 0 unused modules.
+
+22. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+23. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+24. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+25. Executing PROC_INIT pass (extract init attributes).
+
+26. Executing PROC_ARST pass (detect async resets in processes).
+
+27. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+28. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+29. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+30. Executing PROC_DFF pass (convert process syncs to FFs).
+
+31. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+32. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+33. Executing CHECK pass (checking for obvious problems).
+Checking module Viterbi_Top...
+Found and reported 0 problems.
+
+34. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Viterbi_Top.
+
+35. Executing FLATTEN pass (flatten design).
+
+36. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Viterbi_Top.
+
+37. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Viterbi_Top..
+
+38. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Viterbi_Top.
+
+39. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Viterbi_Top'.
+Removed a total of 0 cells.
+
+40. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Viterbi_Top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+41. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Viterbi_Top.
+Performed a total of 0 changes.
+
+42. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Viterbi_Top'.
+Removed a total of 0 cells.
+
+43. Executing OPT_DFF pass (perform DFF optimizations).
+
+44. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Viterbi_Top..
+
+45. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Viterbi_Top.
+
+46. Executing FSM pass (extract and optimize FSM).
+
+46.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+46.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+46.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+46.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Viterbi_Top..
+
+46.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+46.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+46.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+46.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+47. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Viterbi_Top.
+
+48. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Viterbi_Top'.
+Removed a total of 0 cells.
+
+49. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Viterbi_Top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+50. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Viterbi_Top.
+Performed a total of 0 changes.
+
+51. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Viterbi_Top'.
+Removed a total of 0 cells.
+
+52. Executing OPT_DFF pass (perform DFF optimizations).
+
+53. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Viterbi_Top..
+
+54. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Viterbi_Top.
+
+55. Executing WREDUCE pass (reducing word size of cells).
+
+56. Executing PEEPOPT pass (run peephole optimizers).
+
+57. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Viterbi_Top..
+
+58. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module Viterbi_Top:
+  created 0 $alu and 0 $macc cells.
+
+59. Executing SHARE pass (SAT-based resource sharing).
+
+60. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Viterbi_Top.
+
+61. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Viterbi_Top'.
+Removed a total of 0 cells.
+
+62. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Viterbi_Top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+63. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Viterbi_Top.
+Performed a total of 0 changes.
+
+64. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Viterbi_Top'.
+Removed a total of 0 cells.
+
+65. Executing OPT_DFF pass (perform DFF optimizations).
+
+66. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Viterbi_Top..
+
+67. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Viterbi_Top.
+
+68. Executing MEMORY pass.
+
+68.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+68.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+68.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+68.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+68.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+68.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Viterbi_Top..
+
+68.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+68.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+68.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Viterbi_Top..
+
+68.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+69. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Viterbi_Top..
+
+70. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Viterbi_Top.
+
+71. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Viterbi_Top'.
+Removed a total of 0 cells.
+
+72. Executing OPT_DFF pass (perform DFF optimizations).
+
+73. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Viterbi_Top..
+
+74. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+75. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Viterbi_Top.
+
+76. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Viterbi_Top'.
+Removed a total of 0 cells.
+
+77. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Viterbi_Top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+78. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Viterbi_Top.
+Performed a total of 0 changes.
+
+79. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Viterbi_Top'.
+Removed a total of 0 cells.
+
+80. Executing OPT_SHARE pass.
+
+81. Executing OPT_DFF pass (perform DFF optimizations).
+
+82. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Viterbi_Top..
+
+83. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Viterbi_Top.
+
+84. Executing TECHMAP pass (map to technology primitives).
+
+84.1. Executing Verilog-2005 frontend: /nix/store/9r0bh7sp051dpm8km8bqlb028anpd3v3-yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nix/store/9r0bh7sp051dpm8km8bqlb028anpd3v3-yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+84.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~73 debug messages>
+
+85. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Viterbi_Top.
+
+86. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Viterbi_Top'.
+Removed a total of 0 cells.
+
+87. Executing OPT_DFF pass (perform DFF optimizations).
+
+88. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Viterbi_Top..
+
+89. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Viterbi_Top.
+
+90. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Viterbi_Top'.
+Removed a total of 0 cells.
+
+91. Executing OPT_DFF pass (perform DFF optimizations).
+
+92. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Viterbi_Top..
+
+93. Executing ABC pass (technology mapping using ABC).
+
+93.1. Extracting gate netlist of module `\Viterbi_Top' to `<abc-temp-dir>/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+94. Executing OPT pass (performing simple optimizations).
+
+94.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Viterbi_Top.
+
+94.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Viterbi_Top'.
+Removed a total of 0 cells.
+
+94.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+94.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Viterbi_Top..
+
+94.5. Finished fast OPT passes.
+
+95. Executing HIERARCHY pass (managing design hierarchy).
+
+95.1. Analyzing design hierarchy..
+Top module:  \Viterbi_Top
+
+95.2. Analyzing design hierarchy..
+Top module:  \Viterbi_Top
+Removed 0 unused modules.
+
+96. Executing CHECK pass (checking for obvious problems).
+Checking module Viterbi_Top...
+Found and reported 0 problems.
+
+97. Printing statistics.
+
+=== Viterbi_Top ===
+
+   Number of wires:                 24
+   Number of wire bits:             53
+   Number of public wires:          24
+   Number of public wire bits:      53
+   Number of ports:                  6
+   Number of port bits:             14
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  5
+     Branch_Metrics                  1
+     Controller                      1
+     Maximum_Path_Memory             1
+     Path_Metric_Unit                1
+     Survivor_Memory_Unit            1
+
+98. Generating Graphviz representation of design.
+Writing dot description to `/home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/runs/RUN_2026-01-22_15-55-06/02-yosys-synthesis/primitive_techmap.dot'.
+Dumping module Viterbi_Top to page 1.
+
+99. Executing OPT pass (performing simple optimizations).
+
+99.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Viterbi_Top.
+
+99.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Viterbi_Top'.
+Removed a total of 0 cells.
+
+99.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Viterbi_Top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+99.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Viterbi_Top.
+Performed a total of 0 changes.
+
+99.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Viterbi_Top'.
+Removed a total of 0 cells.
+
+99.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+99.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Viterbi_Top..
+
+99.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Viterbi_Top.
+
+99.9. Finished OPT passes. (There is nothing left to do.)
+
+100. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Viterbi_Top..
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/runs/RUN_2026-01-22_15-55-06/tmp/90a17d062d4640fdb5b095c20aadbf44.lib ",
+   "modules": {
+      "\\Viterbi_Top": {
+         "num_wires":         24,
+         "num_wire_bits":     53,
+         "num_pub_wires":     24,
+         "num_pub_wire_bits": 53,
+         "num_ports":         6,
+         "num_port_bits":     14,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         5,
+         "num_cells_by_type": {
+            "Branch_Metrics": 1,
+            "Controller": 1,
+            "Maximum_Path_Memory": 1,
+            "Path_Metric_Unit": 1,
+            "Survivor_Memory_Unit": 1
+         }
+      }
+   },
+      "design": {
+         "num_wires":         24,
+         "num_wire_bits":     53,
+         "num_pub_wires":     24,
+         "num_pub_wire_bits": 53,
+         "num_ports":         6,
+         "num_port_bits":     14,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         5,
+         "num_cells_by_type": {
+            "Branch_Metrics": 1,
+            "Controller": 1,
+            "Maximum_Path_Memory": 1,
+            "Path_Metric_Unit": 1,
+            "Survivor_Memory_Unit": 1
+         }
+      }
+}
+
+101. Printing statistics.
+
+=== Viterbi_Top ===
+
+   Number of wires:                 24
+   Number of wire bits:             53
+   Number of public wires:          24
+   Number of public wire bits:      53
+   Number of ports:                  6
+   Number of port bits:             14
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  5
+     Branch_Metrics                  1
+     Controller                      1
+     Maximum_Path_Memory             1
+     Path_Metric_Unit                1
+     Survivor_Memory_Unit            1
+
+   Area for cell type \Branch_Metrics is unknown!
+   Area for cell type \Controller is unknown!
+   Area for cell type \Path_Metric_Unit is unknown!
+   Area for cell type \Maximum_Path_Memory is unknown!
+   Area for cell type \Survivor_Memory_Unit is unknown!
+
+[INFO] Applying tri-state buffer mapping from '/home/edabk/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v'…
+
+102. Executing TECHMAP pass (map to technology primitives).
+
+102.1. Executing Verilog-2005 frontend: /home/edabk/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/home/edabk/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+102.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+103. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+[INFO] Applying latch mapping from '/home/edabk/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v'…
+
+104. Executing TECHMAP pass (map to technology primitives).
+
+104.1. Executing Verilog-2005 frontend: /home/edabk/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/home/edabk/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+104.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+105. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+106. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+106.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\Viterbi_Top':
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/runs/RUN_2026-01-22_15-55-06/tmp/90a17d062d4640fdb5b095c20aadbf44.lib ",
+   "modules": {
+      "\\Viterbi_Top": {
+         "num_wires":         24,
+         "num_wire_bits":     53,
+         "num_pub_wires":     24,
+         "num_pub_wire_bits": 53,
+         "num_ports":         6,
+         "num_port_bits":     14,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         5,
+         "num_cells_by_type": {
+            "Branch_Metrics": 1,
+            "Controller": 1,
+            "Maximum_Path_Memory": 1,
+            "Path_Metric_Unit": 1,
+            "Survivor_Memory_Unit": 1
+         }
+      }
+   },
+      "design": {
+         "num_wires":         24,
+         "num_wire_bits":     53,
+         "num_pub_wires":     24,
+         "num_pub_wire_bits": 53,
+         "num_ports":         6,
+         "num_port_bits":     14,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         5,
+         "num_cells_by_type": {
+            "Branch_Metrics": 1,
+            "Controller": 1,
+            "Maximum_Path_Memory": 1,
+            "Path_Metric_Unit": 1,
+            "Survivor_Memory_Unit": 1
+         }
+      }
+}
+
+107. Printing statistics.
+
+=== Viterbi_Top ===
+
+   Number of wires:                 24
+   Number of wire bits:             53
+   Number of public wires:          24
+   Number of public wire bits:      53
+   Number of ports:                  6
+   Number of port bits:             14
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  5
+     Branch_Metrics                  1
+     Controller                      1
+     Maximum_Path_Memory             1
+     Path_Metric_Unit                1
+     Survivor_Memory_Unit            1
+
+   Area for cell type \Branch_Metrics is unknown!
+   Area for cell type \Controller is unknown!
+   Area for cell type \Path_Metric_Unit is unknown!
+   Area for cell type \Maximum_Path_Memory is unknown!
+   Area for cell type \Survivor_Memory_Unit is unknown!
+
+[INFO] Using generated ABC script '/home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/runs/RUN_2026-01-22_15-55-06/02-yosys-synthesis/AREA_0.abc'…
+
+108. Executing ABC pass (technology mapping using ABC).
+
+108.1. Extracting gate netlist of module `\Viterbi_Top' to `/tmp/yosys-abc-8q14GW/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+109. Executing SETUNDEF pass (replace undef values with defined constants).
+
+110. Executing HILOMAP pass (mapping to constant drivers).
+
+111. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+112. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Viterbi_Top..
+
+113. Executing INSBUF pass (insert buffer cells for connected wires).
+
+114. Executing CHECK pass (checking for obvious problems).
+Checking module Viterbi_Top...
+Found and reported 0 problems.
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/edabk/Desktop/Tu67/MARCO_ultra_9.7_final/runs/RUN_2026-01-22_15-55-06/tmp/90a17d062d4640fdb5b095c20aadbf44.lib ",
+   "modules": {
+      "\\Viterbi_Top": {
+         "num_wires":         45,
+         "num_wire_bits":     53,
+         "num_pub_wires":     45,
+         "num_pub_wire_bits": 53,
+         "num_ports":         6,
+         "num_port_bits":     14,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         5,
+         "num_cells_by_type": {
+            "Branch_Metrics": 1,
+            "Controller": 1,
+            "Maximum_Path_Memory": 1,
+            "Path_Metric_Unit": 1,
+            "Survivor_Memory_Unit": 1
+         }
+      }
+   },
+      "design": {
+         "num_wires":         45,
+         "num_wire_bits":     53,
+         "num_pub_wires":     45,
+         "num_pub_wire_bits": 53,
+         "num_ports":         6,
+         "num_port_bits":     14,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         5,
+         "num_cells_by_type": {
+            "Branch_Metrics": 1,
+            "Controller": 1,
+            "Maximum_Path_Memory": 1,
+            "Path_Metric_Unit": 1,
+            "Survivor_Memory_Unit": 1
+         }
+      }
+}
+
+115. Printing statistics.
+
+=== Viterbi_Top ===
+
+   Number of wires:                 45
+   Number of wire bits:             53
+   Number of public wires:          45
+   Number of public wire bits:      53
+   Number of ports:                  6
+   Number of port bits:             14
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  5
+     Branch_Metrics                  1
+     Controller                      1
+     Maximum_Path_Memory             1
+     Path_Metric_Unit                1
+     Survivor_Memory_Unit            1
+
+   Area for cell type \Branch_Metrics is unknown!
+   Area for cell type \Controller is unknown!
+   Area for cell type \Path_Metric_Unit is unknown!
+   Area for cell type \Maximum_Path_Memory is unknown!
+   Area for cell type \Survivor_Memory_Unit is unknown!
+
+116. Executing Verilog backend.
+Dumping module `\Viterbi_Top'.
+
+117. Executing JSON backend.

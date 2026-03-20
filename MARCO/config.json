@@ -1,0 +1,114 @@
+{
+    "DESIGN_NAME": "Viterbi_Top",
+
+    "VERILOG_FILES": [
+        "dir::hdl/top_viterbi.v",
+        
+        "dir::hdl/Branch_Metrics.v",
+        "dir::hdl/Controller.v",
+        "dir::hdl/Maximum_Path_Memory.v",
+        "dir::hdl/Path_Metric_Unit.v",
+        "dir::hdl/Survivor_Memory_Unit.v",
+        "dir::hdl/Add_Compare_Select.v",
+        "dir::hdl/Metric_Register.v",
+        "dir::hdl/Register_exchange.v",
+        "dir::hdl/Output_Register_Location.v"
+
+    ],
+
+        
+
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 100.0,
+
+    "MACROS": {
+        "Branch_Metrics": {
+            "instances": { "BMU": { "location": [40, 200], "orientation": "N" } },
+            "gds": ["dir::Branch_Metrics/runs/Branch_Metrics_run/final/gds/Branch_Metrics.gds"],
+            "lef": ["dir::Branch_Metrics/runs/Branch_Metrics_run/final/lef/Branch_Metrics.lef"],
+            "lib": { "*": "dir::Branch_Metrics/runs/Branch_Metrics_run/final/lib/max_ss_100C_1v60/Branch_Metrics__max_ss_100C_1v60.lib" }
+        },
+        "Controller": {
+            "instances": { "CTRL": { "location": [160, 340], "orientation": "N" } },
+            "gds": ["dir::Controller/runs/Controller_run/final/gds/Controller.gds"],
+            "lef": ["dir::Controller/runs/Controller_run/final/lef/Controller.lef"],
+            "lib": { "*": "dir::Controller/runs/Controller_run/final/lib/max_ss_100C_1v60/Controller__max_ss_100C_1v60.lib" }
+        },
+        "Path_Metric_Unit": {
+            "instances": { "PMU_Top": { "location": [160, 200], "orientation": "N" } },
+            "gds": ["dir::Path_Metric_Unit/runs/Path_Metric_Unit_run/final/gds/Path_Metric_Unit.gds"],
+            "lef": ["dir::Path_Metric_Unit/runs/Path_Metric_Unit_run/final/lef/Path_Metric_Unit.lef"],
+            "lib": { "*": "dir::Path_Metric_Unit/runs/Path_Metric_Unit_run/final/lib/max_ss_100C_1v60/Path_Metric_Unit__max_ss_100C_1v60.lib" }
+        },
+        "Maximum_Path_Memory": {
+            "instances": { "MPM": { "location": [160, 60], "orientation": "N" } },
+            "gds": ["dir::Maximum_Path_Memory/runs/Maximum_Path_Memory_run/final/gds/Maximum_Path_Memory.gds"],
+            "lef": ["dir::Maximum_Path_Memory/runs/Maximum_Path_Memory_run/final/lef/Maximum_Path_Memory.lef"],
+            "lib": { "*": "dir::Maximum_Path_Memory/runs/Maximum_Path_Memory_run/final/lib/max_ss_100C_1v60/Maximum_Path_Memory__max_ss_100C_1v60.lib" }
+        },
+        "Survivor_Memory_Unit": {
+            "instances": { "SMU_Top": { "location": [300, 200], "orientation": "N" } },
+            "gds": ["dir::Survivor_Memory_Unit/runs/Survivor_Memory_Unit_run/final/gds/Survivor_Memory_Unit.gds"],
+            "lef": ["dir::Survivor_Memory_Unit/runs/Survivor_Memory_Unit_run/final/lef/Survivor_Memory_Unit.lef"],
+            "lib": { "*": "dir::Survivor_Memory_Unit/runs/Survivor_Memory_Unit_run/final/lib/max_ss_100C_1v60/Survivor_Memory_Unit__max_ss_100C_1v60.lib" }
+        }
+    },
+    
+    
+    "FP_SIZING": "absolute",
+    "DIE_AREA": [0, 0, 420, 430],
+    "FP_CORE_MARGIN": 15,
+
+    "VDD_NETS": ["VPWR"],
+    "GND_NETS": ["VGND"],
+
+    "PL_TARGET_DENSITY_PCT": 30,
+    "PL_MACRO_HALO": [10, 10],
+    "PL_MACRO_CHANNEL": [60, 60],
+
+    "FP_PDN_MULTILAYER": true,
+    "FP_PDN_MACRO_HOOKS": [
+        "BMU VPWR VGND VPWR VGND",
+        "CTRL VPWR VGND VPWR VGND",
+        "PMU_Top VPWR VGND VPWR VGND",
+        "MPM VPWR VGND VPWR VGND",
+        "SMU_Top VPWR VGND VPWR VGND"
+    ],
+
+    "FP_PDN_VPITCH": 40,
+    "FP_PDN_HPITCH": 40,
+    "FP_PDN_VOFFSET": 5,
+    "FP_PDN_HOFFSET": 5,
+    "FP_PDN_VWIDTH": 3.0,
+    "FP_PDN_HWIDTH": 3.0,
+    "FP_PDN_ENABLE_MACROS_GRID": true,
+    "FP_PDN_CHECK_NODES": false,
+
+    "RT_MIN_LAYER": "met1", 
+    "RT_MAX_LAYER": "met5", 
+
+    "LVS_INSERT_POWER_PINS": true,
+    "SYNTH_USE_PG_PINS_DEFINES": "USE_POWER_PINS",
+      
+    "GRT_REPAIR_ANTENNAS": true,
+    "DIODE_INSERTION_STRATEGY": 4,
+    "DIODE_ON_PORTS": "in",
+    "RUN_HEURISTIC_DIODE_INSERTION": true,
+    "GRT_ANTENNA_ITERS": 50,
+    "GRT_MAX_DIODE_INS_ITERS": 50,
+    "DIODE_CELL": "sky130_fd_sc_hd__diode_2/DIODE",
+
+    "FP_TAPCELL_DIST": 13,
+    "FP_WELLTAP_CELL": "sky130_fd_sc_hd__tapvpwrvgnd_1", 
+    "FP_ENDCAP_CELL": "sky130_fd_sc_hd__decap_3",
+    "FP_PIN_ORDER_CFG": "dir::pin.cfg",
+
+    "RUN_LINTER": false,
+    "RUN_IRDROP_REPORT": false,
+    "QUIT_ON_LVS_ERROR": false,
+    "QUIT_ON_MAGIC_DRC": false,
+    "QUIT_ON_DISCONNECTED_PINS": false,
+    "QUIT_ON_TIMING_VIOLATIONS": false,
+    "RUN_CTS": true
+}
+

@@ -1,0 +1,81 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+Startpoint: received[1] (input port clocked by __VIRTUAL_CLK__)
+Endpoint: bm_01_10[0] (output port clocked by __VIRTUAL_CLK__)
+Path Group: __VIRTUAL_CLK__
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  2.000000    2.000000 ^ input external delay
+     1    0.003879    0.024413    0.014111    2.014111 ^ received[1] (in)
+                                                         received[1] (net)
+                      0.024421    0.000000    2.014111 ^ input2/A (sky130_fd_sc_hd__clkbuf_2)
+     6    0.025270    0.141997    0.166283    2.180394 ^ input2/X (sky130_fd_sc_hd__clkbuf_2)
+                                                         net2 (net)
+                      0.142025    0.001619    2.182012 ^ _02_/B (sky130_fd_sc_hd__xor2_1)
+     4    0.012259    0.280320    0.282191    2.464203 ^ _02_/X (sky130_fd_sc_hd__xor2_1)
+                                                         net3 (net)
+                      0.280320    0.000177    2.464380 ^ _09_/A (sky130_fd_sc_hd__clkbuf_1)
+     1    0.003652    0.055380    0.131277    2.595657 ^ _09_/X (sky130_fd_sc_hd__clkbuf_1)
+                                                         net9 (net)
+                      0.055380    0.000135    2.595792 ^ output9/A (sky130_fd_sc_hd__buf_2)
+     1    0.035392    0.175461    0.205283    2.801075 ^ output9/X (sky130_fd_sc_hd__buf_2)
+                                                         bm_01_10[0] (net)
+                      0.175521    0.001185    2.802260 ^ bm_01_10[0] (out)
+                                              2.802260   data arrival time
+
+                      0.000000   10.000000   10.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000   10.000000   clock network delay (ideal)
+                                 -0.250000    9.750000   clock uncertainty
+                                  0.000000    9.750000   clock reconvergence pessimism
+                                 -2.000000    7.750000   output external delay
+                                              7.750000   data required time
+---------------------------------------------------------------------------------------------
+                                              7.750000   data required time
+                                             -2.802260   data arrival time
+---------------------------------------------------------------------------------------------
+                                              4.947739   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 0 unannotated drivers.
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+Writing metric design__max_slew_violation__count__corner:nom_tt_025C_1v80: 0
+max fanout violation count 0
+Writing metric design__max_fanout_violation__count__corner:nom_tt_025C_1v80: 0
+max cap violation count 0
+Writing metric design__max_cap_violation__count__corner:nom_tt_025C_1v80: 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================

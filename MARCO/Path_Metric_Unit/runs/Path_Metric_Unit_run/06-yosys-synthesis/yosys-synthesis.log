@@ -1,0 +1,1097 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)
+Loaded SDC plugin
+
+1. Executing Liberty frontend: /home/edabk/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+[INFO] Using SDC file '/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/runs/RUN_2026-01-21_19-00-38/06-yosys-synthesis/synthesis.abc.sdc' for ABC…
+
+2. Executing Verilog-2005 frontend: /home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Path_Metric_Unit.v
+Parsing SystemVerilog input from `/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Path_Metric_Unit.v' to AST representation.
+Storing AST representation for module `$abstract\Path_Metric_Unit'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v
+Parsing SystemVerilog input from `/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v' to AST representation.
+Storing AST representation for module `$abstract\Add_compare_select'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Metric_Register.v
+Parsing SystemVerilog input from `/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Metric_Register.v' to AST representation.
+Storing AST representation for module `$abstract\Metric_register'.
+Successfully finished Verilog frontend.
+
+5. Executing HIERARCHY pass (managing design hierarchy).
+
+6. Executing AST frontend in derive mode using pre-parsed AST for module `\Path_Metric_Unit'.
+Generating RTLIL representation for module `\Path_Metric_Unit'.
+
+6.1. Analyzing design hierarchy..
+Top module:  \Path_Metric_Unit
+
+6.2. Executing AST frontend in derive mode using pre-parsed AST for module `\Metric_register'.
+Generating RTLIL representation for module `\Metric_register'.
+
+6.3. Executing AST frontend in derive mode using pre-parsed AST for module `\Add_compare_select'.
+Generating RTLIL representation for module `\Add_compare_select'.
+
+6.4. Analyzing design hierarchy..
+Top module:  \Path_Metric_Unit
+Used module:     \Metric_register
+Used module:     \Add_compare_select
+
+6.5. Analyzing design hierarchy..
+Top module:  \Path_Metric_Unit
+Used module:     \Metric_register
+Used module:     \Add_compare_select
+Removing unused module `$abstract\Metric_register'.
+Removing unused module `$abstract\Add_compare_select'.
+Removing unused module `$abstract\Path_Metric_Unit'.
+Removed 3 unused modules.
+Renaming module Path_Metric_Unit to Path_Metric_Unit.
+
+7. Generating Graphviz representation of design.
+Writing dot description to `/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/runs/RUN_2026-01-21_19-00-38/06-yosys-synthesis/hierarchy.dot'.
+Dumping module Path_Metric_Unit to page 1.
+
+8. Executing TRIBUF pass.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \Path_Metric_Unit
+Used module:     \Metric_register
+Used module:     \Add_compare_select
+
+9.2. Analyzing design hierarchy..
+Top module:  \Path_Metric_Unit
+Used module:     \Metric_register
+Used module:     \Add_compare_select
+Removed 0 unused modules.
+
+10. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+11. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Metric_Register.v:17$1 in module Metric_register.
+Removed a total of 0 dead cases.
+
+12. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 4 redundant assignments.
+Promoted 0 assignments to connections.
+
+13. Executing PROC_INIT pass (extract init attributes).
+
+14. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\Metric_register.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Metric_Register.v:17$1'.
+
+15. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~1 debug messages>
+
+16. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\Metric_register.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Metric_Register.v:17$1'.
+     1/4: $0\prev_11[3:0]
+     2/4: $0\prev_10[3:0]
+     3/4: $0\prev_01[3:0]
+     4/4: $0\prev_00[3:0]
+
+17. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+18. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\Metric_register.\prev_00' using process `\Metric_register.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Metric_Register.v:17$1'.
+  created $adff cell `$procdff$35' with positive edge clock and positive level reset.
+Creating register for signal `\Metric_register.\prev_01' using process `\Metric_register.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Metric_Register.v:17$1'.
+  created $adff cell `$procdff$40' with positive edge clock and positive level reset.
+Creating register for signal `\Metric_register.\prev_10' using process `\Metric_register.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Metric_Register.v:17$1'.
+  created $adff cell `$procdff$45' with positive edge clock and positive level reset.
+Creating register for signal `\Metric_register.\prev_11' using process `\Metric_register.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Metric_Register.v:17$1'.
+  created $adff cell `$procdff$50' with positive edge clock and positive level reset.
+
+19. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+20. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\Metric_register.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Metric_Register.v:17$1'.
+Removing empty process `Metric_register.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Metric_Register.v:17$1'.
+Cleaned up 1 empty switch.
+
+21. Executing CHECK pass (checking for obvious problems).
+Checking module Path_Metric_Unit...
+Checking module Metric_register...
+Checking module Add_compare_select...
+Found and reported 0 problems.
+
+22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Path_Metric_Unit.
+Optimizing module Metric_register.
+<suppressed ~8 debug messages>
+Optimizing module Add_compare_select.
+
+23. Executing FLATTEN pass (flatten design).
+Deleting now unused module Metric_register.
+Deleting now unused module Add_compare_select.
+<suppressed ~2 debug messages>
+
+24. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Path_Metric_Unit.
+
+25. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Path_Metric_Unit..
+Removed 5 unused cells and 29 unused wires.
+<suppressed ~6 debug messages>
+
+26. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Path_Metric_Unit.
+
+27. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Path_Metric_Unit'.
+Removed a total of 0 cells.
+
+28. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Path_Metric_Unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+29. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Path_Metric_Unit.
+Performed a total of 0 changes.
+
+30. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Path_Metric_Unit'.
+Removed a total of 0 cells.
+
+31. Executing OPT_DFF pass (perform DFF optimizations).
+
+32. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Path_Metric_Unit..
+
+33. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Path_Metric_Unit.
+
+34. Executing FSM pass (extract and optimize FSM).
+
+34.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+34.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+34.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+34.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Path_Metric_Unit..
+
+34.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+34.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+34.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+34.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+35. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Path_Metric_Unit.
+
+36. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Path_Metric_Unit'.
+Removed a total of 0 cells.
+
+37. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Path_Metric_Unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+38. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Path_Metric_Unit.
+Performed a total of 0 changes.
+
+39. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Path_Metric_Unit'.
+Removed a total of 0 cells.
+
+40. Executing OPT_DFF pass (perform DFF optimizations).
+
+41. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Path_Metric_Unit..
+
+42. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Path_Metric_Unit.
+
+43. Executing WREDUCE pass (reducing word size of cells).
+
+44. Executing PEEPOPT pass (run peephole optimizers).
+
+45. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Path_Metric_Unit..
+
+46. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module Path_Metric_Unit:
+  creating $macc model for $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:40$3 ($add).
+  creating $macc model for $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:41$4 ($add).
+  creating $macc model for $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:43$5 ($add).
+  creating $macc model for $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:44$6 ($add).
+  creating $macc model for $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:46$7 ($add).
+  creating $macc model for $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:47$8 ($add).
+  creating $macc model for $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:49$9 ($add).
+  creating $macc model for $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:50$10 ($add).
+  creating $alu model for $macc $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:50$10.
+  creating $alu model for $macc $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:49$9.
+  creating $alu model for $macc $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:47$8.
+  creating $alu model for $macc $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:46$7.
+  creating $alu model for $macc $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:44$6.
+  creating $alu model for $macc $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:43$5.
+  creating $alu model for $macc $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:41$4.
+  creating $alu model for $macc $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:40$3.
+  creating $alu model for $flatten\ACS_Unit.$gt$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:55$11 ($gt): new $alu
+  creating $alu model for $flatten\ACS_Unit.$gt$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:57$13 ($gt): new $alu
+  creating $alu model for $flatten\ACS_Unit.$gt$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:59$15 ($gt): new $alu
+  creating $alu model for $flatten\ACS_Unit.$gt$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:61$17 ($gt): new $alu
+  creating $alu cell for $flatten\ACS_Unit.$gt$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:61$17: $auto$alumacc.cc:485:replace_alu$57
+  creating $alu cell for $flatten\ACS_Unit.$gt$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:59$15: $auto$alumacc.cc:485:replace_alu$62
+  creating $alu cell for $flatten\ACS_Unit.$gt$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:57$13: $auto$alumacc.cc:485:replace_alu$73
+  creating $alu cell for $flatten\ACS_Unit.$gt$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:55$11: $auto$alumacc.cc:485:replace_alu$78
+  creating $alu cell for $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:40$3: $auto$alumacc.cc:485:replace_alu$83
+  creating $alu cell for $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:41$4: $auto$alumacc.cc:485:replace_alu$86
+  creating $alu cell for $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:43$5: $auto$alumacc.cc:485:replace_alu$89
+  creating $alu cell for $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:44$6: $auto$alumacc.cc:485:replace_alu$92
+  creating $alu cell for $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:46$7: $auto$alumacc.cc:485:replace_alu$95
+  creating $alu cell for $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:47$8: $auto$alumacc.cc:485:replace_alu$98
+  creating $alu cell for $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:49$9: $auto$alumacc.cc:485:replace_alu$101
+  creating $alu cell for $flatten\ACS_Unit.$add$/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/hdl/Add_Compare_Select.v:50$10: $auto$alumacc.cc:485:replace_alu$104
+  created 12 $alu and 0 $macc cells.
+
+47. Executing SHARE pass (SAT-based resource sharing).
+
+48. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Path_Metric_Unit.
+<suppressed ~4 debug messages>
+
+49. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Path_Metric_Unit'.
+Removed a total of 0 cells.
+
+50. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Path_Metric_Unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+51. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Path_Metric_Unit.
+Performed a total of 0 changes.
+
+52. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Path_Metric_Unit'.
+Removed a total of 0 cells.
+
+53. Executing OPT_DFF pass (perform DFF optimizations).
+
+54. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Path_Metric_Unit..
+Removed 4 unused cells and 8 unused wires.
+<suppressed ~5 debug messages>
+
+55. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Path_Metric_Unit.
+
+56. Rerunning OPT passes. (Maybe there is more to do…)
+
+57. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Path_Metric_Unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+58. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Path_Metric_Unit.
+Performed a total of 0 changes.
+
+59. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Path_Metric_Unit'.
+Removed a total of 0 cells.
+
+60. Executing OPT_DFF pass (perform DFF optimizations).
+
+61. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Path_Metric_Unit..
+
+62. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Path_Metric_Unit.
+
+63. Executing MEMORY pass.
+
+63.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+63.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+63.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+63.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+63.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+63.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Path_Metric_Unit..
+
+63.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+63.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+63.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Path_Metric_Unit..
+
+63.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+64. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Path_Metric_Unit..
+
+65. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Path_Metric_Unit.
+
+66. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Path_Metric_Unit'.
+Removed a total of 0 cells.
+
+67. Executing OPT_DFF pass (perform DFF optimizations).
+
+68. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Path_Metric_Unit..
+
+69. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+70. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Path_Metric_Unit.
+
+71. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Path_Metric_Unit'.
+Removed a total of 0 cells.
+
+72. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Path_Metric_Unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+73. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Path_Metric_Unit.
+Performed a total of 0 changes.
+
+74. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Path_Metric_Unit'.
+Removed a total of 0 cells.
+
+75. Executing OPT_SHARE pass.
+
+76. Executing OPT_DFF pass (perform DFF optimizations).
+
+77. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Path_Metric_Unit..
+
+78. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Path_Metric_Unit.
+
+79. Executing TECHMAP pass (map to technology primitives).
+
+79.1. Executing Verilog-2005 frontend: /nix/store/9r0bh7sp051dpm8km8bqlb028anpd3v3-yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nix/store/9r0bh7sp051dpm8km8bqlb028anpd3v3-yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+79.2. Continuing TECHMAP pass.
+Using template $paramod$f85408ed1aa3d09e465edae8a7bf590332ae9f7b\_90_alu for cells of type $alu.
+Using template $paramod$740b056ede97228d3eae64ea2fdc81f0a33e0fe7\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+No more expansions possible.
+<suppressed ~475 debug messages>
+
+80. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Path_Metric_Unit.
+<suppressed ~156 debug messages>
+
+81. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Path_Metric_Unit'.
+<suppressed ~63 debug messages>
+Removed a total of 21 cells.
+
+82. Executing OPT_DFF pass (perform DFF optimizations).
+
+83. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Path_Metric_Unit..
+Removed 52 unused cells and 350 unused wires.
+<suppressed ~53 debug messages>
+
+84. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Path_Metric_Unit.
+
+85. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Path_Metric_Unit'.
+Removed a total of 0 cells.
+
+86. Executing OPT_DFF pass (perform DFF optimizations).
+
+87. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Path_Metric_Unit..
+
+88. Executing ABC pass (technology mapping using ABC).
+
+88.1. Extracting gate netlist of module `\Path_Metric_Unit' to `<abc-temp-dir>/input.blif'..
+Extracted 200 gates and 234 wires to a netlist network with 33 inputs and 20 outputs.
+
+88.1.1. Executing ABC.
+Running ABC command: "/nix/store/6l3aj1gi4lja8z5s4lan2k2cfz9mqkrz-yosys-abc/bin/abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+88.1.2. Re-integrating ABC results.
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:               AND cells:        8
+ABC RESULTS:              NAND cells:       12
+ABC RESULTS:              XNOR cells:       20
+ABC RESULTS:               NOT cells:        4
+ABC RESULTS:               XOR cells:       34
+ABC RESULTS:               MUX cells:       13
+ABC RESULTS:             ORNOT cells:       12
+ABC RESULTS:            ANDNOT cells:       72
+ABC RESULTS:        internal signals:      181
+ABC RESULTS:           input signals:       33
+ABC RESULTS:          output signals:       20
+Removing temp directory.
+
+89. Executing OPT pass (performing simple optimizations).
+
+89.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Path_Metric_Unit.
+
+89.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Path_Metric_Unit'.
+Removed a total of 0 cells.
+
+89.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+89.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Path_Metric_Unit..
+Removed 0 unused cells and 132 unused wires.
+<suppressed ~21 debug messages>
+
+89.5. Finished fast OPT passes.
+
+90. Executing HIERARCHY pass (managing design hierarchy).
+
+90.1. Analyzing design hierarchy..
+Top module:  \Path_Metric_Unit
+
+90.2. Analyzing design hierarchy..
+Top module:  \Path_Metric_Unit
+Removed 0 unused modules.
+
+91. Executing CHECK pass (checking for obvious problems).
+Checking module Path_Metric_Unit...
+Found and reported 0 problems.
+
+92. Printing statistics.
+
+=== Path_Metric_Unit ===
+
+   Number of wires:                219
+   Number of wire bits:            283
+   Number of public wires:          46
+   Number of public wire bits:     110
+   Number of ports:                 19
+   Number of port bits:             39
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                195
+     $_ANDNOT_                      72
+     $_AND_                          8
+     $_DFF_PN0_                     16
+     $_MUX_                         13
+     $_NAND_                        12
+     $_NOT_                          4
+     $_ORNOT_                       12
+     $_OR_                           2
+     $_XNOR_                        20
+     $_XOR_                         34
+     $scopeinfo                      2
+
+93. Generating Graphviz representation of design.
+Writing dot description to `/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/runs/RUN_2026-01-21_19-00-38/06-yosys-synthesis/primitive_techmap.dot'.
+Dumping module Path_Metric_Unit to page 1.
+
+94. Executing OPT pass (performing simple optimizations).
+
+94.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Path_Metric_Unit.
+
+94.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Path_Metric_Unit'.
+Removed a total of 0 cells.
+
+94.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Path_Metric_Unit..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+94.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Path_Metric_Unit.
+Performed a total of 0 changes.
+
+94.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Path_Metric_Unit'.
+Removed a total of 0 cells.
+
+94.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+94.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Path_Metric_Unit..
+
+94.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Path_Metric_Unit.
+
+94.9. Finished OPT passes. (There is nothing left to do.)
+
+95. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Path_Metric_Unit..
+Removed 2 unused cells and 27 unused wires.
+<suppressed ~29 debug messages>
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/runs/RUN_2026-01-21_19-00-38/tmp/44b521a6b2dc49769c1244d98e2489aa.lib ",
+   "modules": {
+      "\\Path_Metric_Unit": {
+         "num_wires":         192,
+         "num_wire_bits":     212,
+         "num_pub_wires":     19,
+         "num_pub_wire_bits": 39,
+         "num_ports":         19,
+         "num_port_bits":     39,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         193,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 72,
+            "$_AND_": 8,
+            "$_DFF_PN0_": 16,
+            "$_MUX_": 13,
+            "$_NAND_": 12,
+            "$_NOT_": 4,
+            "$_ORNOT_": 12,
+            "$_OR_": 2,
+            "$_XNOR_": 20,
+            "$_XOR_": 34
+         }
+      }
+   },
+      "design": {
+         "num_wires":         192,
+         "num_wire_bits":     212,
+         "num_pub_wires":     19,
+         "num_pub_wire_bits": 39,
+         "num_ports":         19,
+         "num_port_bits":     39,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         193,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 72,
+            "$_AND_": 8,
+            "$_DFF_PN0_": 16,
+            "$_MUX_": 13,
+            "$_NAND_": 12,
+            "$_NOT_": 4,
+            "$_ORNOT_": 12,
+            "$_OR_": 2,
+            "$_XNOR_": 20,
+            "$_XOR_": 34
+         }
+      }
+}
+
+96. Printing statistics.
+
+=== Path_Metric_Unit ===
+
+   Number of wires:                192
+   Number of wire bits:            212
+   Number of public wires:          19
+   Number of public wire bits:      39
+   Number of ports:                 19
+   Number of port bits:             39
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                193
+     $_ANDNOT_                      72
+     $_AND_                          8
+     $_DFF_PN0_                     16
+     $_MUX_                         13
+     $_NAND_                        12
+     $_NOT_                          4
+     $_ORNOT_                       12
+     $_OR_                           2
+     $_XNOR_                        20
+     $_XOR_                         34
+
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_DFF_PN0_ is unknown!
+
+[INFO] Applying tri-state buffer mapping from '/home/edabk/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v'…
+
+97. Executing TECHMAP pass (map to technology primitives).
+
+97.1. Executing Verilog-2005 frontend: /home/edabk/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/home/edabk/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+97.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+98. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+[INFO] Applying latch mapping from '/home/edabk/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v'…
+
+99. Executing TECHMAP pass (map to technology primitives).
+
+99.1. Executing Verilog-2005 frontend: /home/edabk/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/home/edabk/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+99.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+100. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+101. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+101.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\Path_Metric_Unit':
+  mapped 16 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_2 cells.
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/runs/RUN_2026-01-21_19-00-38/tmp/44b521a6b2dc49769c1244d98e2489aa.lib ",
+   "modules": {
+      "\\Path_Metric_Unit": {
+         "num_wires":         192,
+         "num_wire_bits":     212,
+         "num_pub_wires":     19,
+         "num_pub_wire_bits": 39,
+         "num_ports":         19,
+         "num_port_bits":     39,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         193,
+         "area":              420.403200,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 72,
+            "$_AND_": 8,
+            "$_MUX_": 13,
+            "$_NAND_": 12,
+            "$_NOT_": 4,
+            "$_ORNOT_": 12,
+            "$_OR_": 2,
+            "$_XNOR_": 20,
+            "$_XOR_": 34,
+            "sky130_fd_sc_hd__dfrtp_2": 16
+         }
+      }
+   },
+      "design": {
+         "num_wires":         192,
+         "num_wire_bits":     212,
+         "num_pub_wires":     19,
+         "num_pub_wire_bits": 39,
+         "num_ports":         19,
+         "num_port_bits":     39,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         193,
+         "area":              420.403200,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 72,
+            "$_AND_": 8,
+            "$_MUX_": 13,
+            "$_NAND_": 12,
+            "$_NOT_": 4,
+            "$_ORNOT_": 12,
+            "$_OR_": 2,
+            "$_XNOR_": 20,
+            "$_XOR_": 34,
+            "sky130_fd_sc_hd__dfrtp_2": 16
+         }
+      }
+}
+
+102. Printing statistics.
+
+=== Path_Metric_Unit ===
+
+   Number of wires:                192
+   Number of wire bits:            212
+   Number of public wires:          19
+   Number of public wire bits:      39
+   Number of ports:                 19
+   Number of port bits:             39
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                193
+     $_ANDNOT_                      72
+     $_AND_                          8
+     $_MUX_                         13
+     $_NAND_                        12
+     $_NOT_                          4
+     $_ORNOT_                       12
+     $_OR_                           2
+     $_XNOR_                        20
+     $_XOR_                         34
+     sky130_fd_sc_hd__dfrtp_2       16
+
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+
+   Chip area for module '\Path_Metric_Unit': 420.403200
+     of which used for sequential elements: 420.403200 (100.00%)
+
+[INFO] Using generated ABC script '/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/runs/RUN_2026-01-21_19-00-38/06-yosys-synthesis/AREA_0.abc'…
+
+103. Executing ABC pass (technology mapping using ABC).
+
+103.1. Extracting gate netlist of module `\Path_Metric_Unit' to `/tmp/yosys-abc-G6iIEs/input.blif'..
+Extracted 177 gates and 210 wires to a netlist network with 33 inputs and 20 outputs.
+
+103.1.1. Executing ABC.
+Running ABC command: "/nix/store/6l3aj1gi4lja8z5s4lan2k2cfz9mqkrz-yosys-abc/bin/abc" -s -f /tmp/yosys-abc-G6iIEs/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-G6iIEs/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-G6iIEs/input.blif 
+ABC: + read_lib -w /home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/runs/RUN_2026-01-21_19-00-38/tmp/44b521a6b2dc49769c1244d98e2489aa.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.04 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/runs/RUN_2026-01-21_19-00-38/tmp/44b521a6b2dc49769c1244d98e2489aa.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.06 sec
+ABC: Memory =    9.54 MB. Time =     0.06 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/runs/RUN_2026-01-21_19-00-38/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2/Y".
+ABC: Setting output load to be 33.442001.
+ABC: + source /home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/runs/RUN_2026-01-21_19-00-38/06-yosys-synthesis/AREA_0.abc 
+ABC: Error: The network is combinational.
+ABC: Cannot find the default PI driving cell (sky130_fd_sc_hd__inv_2/Y) in the library.
+ABC: WireLoad = "none"  Gates =    146 (  5.5 %)   Cap = 12.5 ff (  0.7 %)   Area =     1527.72 ( 94.5 %)   Delay =  2234.67 ps  (  9.6 %)               
+ABC: Path  0 --       8 : 0    4 pi                       A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  21.7 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --     115 : 2    2 sky130_fd_sc_hd__xor2_2  A =  16.27  Df = 183.0  -14.4 ps  S = 181.8 ps  Cin =  8.6 ff  Cout =  10.9 ff  Cmax = 130.0 ff  G =  124  
+ABC: Path  2 --     116 : 4    3 sky130_fd_sc_hd__a31o_2  A =   8.76  Df = 452.3  -41.0 ps  S = 102.6 ps  Cin =  2.4 ff  Cout =  15.1 ff  Cmax = 271.9 ff  G =  620  
+ABC: Path  3 --     117 : 3    3 sky130_fd_sc_hd__and3_2  A =   7.51  Df = 681.6  -61.9 ps  S =  70.1 ps  Cin =  1.5 ff  Cout =   8.6 ff  Cmax = 309.5 ff  G =  550  
+ABC: Path  4 --     126 : 4    4 sky130_fd_sc_hd__or4_2   A =   8.76  Df =1392.6 -587.7 ps  S = 135.9 ps  Cin =  1.5 ff  Cout =  11.6 ff  Cmax = 310.4 ff  G =  752  
+ABC: Path  5 --     141 : 4    4 sky130_fd_sc_hd__a31oi_2 A =  12.51  Df =1854.7 -793.1 ps  S = 564.2 ps  Cin =  4.4 ff  Cout =  40.9 ff  Cmax = 118.1 ff  G =  918  
+ABC: Path  6 --     180 : 4    1 sky130_fd_sc_hd__o211a_2 A =  10.01  Df =2234.7 -300.5 ps  S = 205.9 ps  Cin =  2.4 ff  Cout =  33.4 ff  Cmax = 268.3 ff  G = 1415  
+ABC: Start-point = pi7 (\current_metric_10 [1]).  End-point = po8 ($abc$660$flatten\PM_Reg_Unit.$0\prev_01[3:0][0]).
+ABC: netlist                       : i/o =   33/   20  lat =    0  nd =   146  edge =    421  area =1527.94  delay = 6.00  lev = 6
+ABC: + write_blif /tmp/yosys-abc-G6iIEs/output.blif 
+
+103.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__or4_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o22a_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and2b_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a22o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21o_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__and3_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a31o_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__and3b_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o22ai_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__nor4_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:       14
+ABC RESULTS:   sky130_fd_sc_hd__xor2_2 cells:       17
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:       10
+ABC RESULTS:   sky130_fd_sc_hd__or3b_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_2 cells:       14
+ABC RESULTS:   sky130_fd_sc_hd__a21bo_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o221ai_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a31oi_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__a311o_2 cells:       12
+ABC RESULTS:   sky130_fd_sc_hd__o211a_2 cells:       16
+ABC RESULTS:        internal signals:      157
+ABC RESULTS:           input signals:       33
+ABC RESULTS:          output signals:       20
+Removing temp directory.
+
+104. Executing SETUNDEF pass (replace undef values with defined constants).
+
+105. Executing HILOMAP pass (mapping to constant drivers).
+
+106. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+107. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Path_Metric_Unit..
+Removed 0 unused cells and 210 unused wires.
+<suppressed ~1 debug messages>
+
+108. Executing INSBUF pass (insert buffer cells for connected wires).
+
+109. Executing CHECK pass (checking for obvious problems).
+Checking module Path_Metric_Unit...
+Found and reported 0 problems.
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/edabk/Desktop/Tu67/MARCO_ultra/Path_Metric_Unit/runs/RUN_2026-01-21_19-00-38/tmp/44b521a6b2dc49769c1244d98e2489aa.lib ",
+   "modules": {
+      "\\Path_Metric_Unit": {
+         "num_wires":         161,
+         "num_wire_bits":     181,
+         "num_pub_wires":     19,
+         "num_pub_wire_bits": 39,
+         "num_ports":         19,
+         "num_port_bits":     39,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         162,
+         "area":              1948.118400,
+         "num_cells_by_type": {
+            "sky130_fd_sc_hd__a21bo_2": 2,
+            "sky130_fd_sc_hd__a21boi_2": 4,
+            "sky130_fd_sc_hd__a21o_2": 3,
+            "sky130_fd_sc_hd__a21oi_2": 4,
+            "sky130_fd_sc_hd__a22o_2": 1,
+            "sky130_fd_sc_hd__a311o_2": 12,
+            "sky130_fd_sc_hd__a31o_2": 4,
+            "sky130_fd_sc_hd__a31oi_2": 4,
+            "sky130_fd_sc_hd__and2_2": 10,
+            "sky130_fd_sc_hd__and2b_2": 2,
+            "sky130_fd_sc_hd__and3_2": 4,
+            "sky130_fd_sc_hd__and3b_2": 4,
+            "sky130_fd_sc_hd__dfrtp_2": 16,
+            "sky130_fd_sc_hd__inv_2": 8,
+            "sky130_fd_sc_hd__nand2_2": 14,
+            "sky130_fd_sc_hd__nor2_2": 4,
+            "sky130_fd_sc_hd__nor4_2": 3,
+            "sky130_fd_sc_hd__o211a_2": 16,
+            "sky130_fd_sc_hd__o21ai_2": 3,
+            "sky130_fd_sc_hd__o221ai_2": 3,
+            "sky130_fd_sc_hd__o22a_2": 1,
+            "sky130_fd_sc_hd__o22ai_2": 3,
+            "sky130_fd_sc_hd__or2_2": 3,
+            "sky130_fd_sc_hd__or3b_2": 2,
+            "sky130_fd_sc_hd__or4_2": 1,
+            "sky130_fd_sc_hd__xnor2_2": 14,
+            "sky130_fd_sc_hd__xor2_2": 17
+         }
+      }
+   },
+      "design": {
+         "num_wires":         161,
+         "num_wire_bits":     181,
+         "num_pub_wires":     19,
+         "num_pub_wire_bits": 39,
+         "num_ports":         19,
+         "num_port_bits":     39,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         162,
+         "area":              1948.118400,
+         "num_cells_by_type": {
+            "sky130_fd_sc_hd__a21bo_2": 2,
+            "sky130_fd_sc_hd__a21boi_2": 4,
+            "sky130_fd_sc_hd__a21o_2": 3,
+            "sky130_fd_sc_hd__a21oi_2": 4,
+            "sky130_fd_sc_hd__a22o_2": 1,
+            "sky130_fd_sc_hd__a311o_2": 12,
+            "sky130_fd_sc_hd__a31o_2": 4,
+            "sky130_fd_sc_hd__a31oi_2": 4,
+            "sky130_fd_sc_hd__and2_2": 10,
+            "sky130_fd_sc_hd__and2b_2": 2,
+            "sky130_fd_sc_hd__and3_2": 4,
+            "sky130_fd_sc_hd__and3b_2": 4,
+            "sky130_fd_sc_hd__dfrtp_2": 16,
+            "sky130_fd_sc_hd__inv_2": 8,
+            "sky130_fd_sc_hd__nand2_2": 14,
+            "sky130_fd_sc_hd__nor2_2": 4,
+            "sky130_fd_sc_hd__nor4_2": 3,
+            "sky130_fd_sc_hd__o211a_2": 16,
+            "sky130_fd_sc_hd__o21ai_2": 3,
+            "sky130_fd_sc_hd__o221ai_2": 3,
+            "sky130_fd_sc_hd__o22a_2": 1,
+            "sky130_fd_sc_hd__o22ai_2": 3,
+            "sky130_fd_sc_hd__or2_2": 3,
+            "sky130_fd_sc_hd__or3b_2": 2,
+            "sky130_fd_sc_hd__or4_2": 1,
+            "sky130_fd_sc_hd__xnor2_2": 14,
+            "sky130_fd_sc_hd__xor2_2": 17
+         }
+      }
+}
+
+110. Printing statistics.
+
+=== Path_Metric_Unit ===
+
+   Number of wires:                161
+   Number of wire bits:            181
+   Number of public wires:          19
+   Number of public wire bits:      39
+   Number of ports:                 19
+   Number of port bits:             39
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                162
+     sky130_fd_sc_hd__a21bo_2        2
+     sky130_fd_sc_hd__a21boi_2       4
+     sky130_fd_sc_hd__a21o_2         3
+     sky130_fd_sc_hd__a21oi_2        4
+     sky130_fd_sc_hd__a22o_2         1
+     sky130_fd_sc_hd__a311o_2       12
+     sky130_fd_sc_hd__a31o_2         4
+     sky130_fd_sc_hd__a31oi_2        4
+     sky130_fd_sc_hd__and2_2        10
+     sky130_fd_sc_hd__and2b_2        2
+     sky130_fd_sc_hd__and3_2         4
+     sky130_fd_sc_hd__and3b_2        4
+     sky130_fd_sc_hd__dfrtp_2       16
+     sky130_fd_sc_hd__inv_2          8
+     sky130_fd_sc_hd__nand2_2       14
+     sky130_fd_sc_hd__nor2_2         4
+     sky130_fd_sc_hd__nor4_2         3
+     sky130_fd_sc_hd__o211a_2       16
+     sky130_fd_sc_hd__o21ai_2        3
+     sky130_fd_sc_hd__o221ai_2       3
+     sky130_fd_sc_hd__o22a_2         1
+     sky130_fd_sc_hd__o22ai_2        3
+     sky130_fd_sc_hd__or2_2          3
+     sky130_fd_sc_hd__or3b_2         2
+     sky130_fd_sc_hd__or4_2          1
+     sky130_fd_sc_hd__xnor2_2       14
+     sky130_fd_sc_hd__xor2_2        17
+
+   Chip area for module '\Path_Metric_Unit': 1948.118400
+     of which used for sequential elements: 420.403200 (21.58%)
+
+111. Executing Verilog backend.
+Dumping module `\Path_Metric_Unit'.
+
+112. Executing JSON backend.

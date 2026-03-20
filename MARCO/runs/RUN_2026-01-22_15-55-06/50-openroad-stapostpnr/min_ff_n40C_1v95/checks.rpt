@@ -1,0 +1,85 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= min_ff_n40C_1v95 Corner ===================================
+
+Startpoint: received[0] (input port clocked by clk)
+Endpoint: SMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                  0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (propagated)
+                                 20.000000   20.000000 ^ input external delay
+     2    0.003755    0.017346    0.009718   20.009718 ^ received[0] (in)
+                                                         received[0] (net)
+                      0.017346    0.000000   20.009718 ^ input1/A (sky130_fd_sc_hd__buf_1)
+     3    0.018930    0.168644    0.142480   20.152199 ^ input1/X (sky130_fd_sc_hd__buf_1)
+                                                         net1 (net)
+                      0.168656    0.001208   20.153406 ^ BMU/received[0] (Branch_Metrics)
+     1    0.011786    0.106295    1.511593   21.664999 ^ BMU/bm_10_11[0] (Branch_Metrics)
+                                                         bm_10_11[0] (net)
+                      0.106295    0.000064   21.665064 ^ PMU_Top/bm_10_11[0] (Path_Metric_Unit)
+     1    0.007502    0.076776    3.837551   25.502615 ^ PMU_Top/servivor_select_11 (Path_Metric_Unit)
+                                                         servivor_select_11 (net)
+                      0.076776    0.000025   25.502640 ^ SMU_Top/survivor_select_11 (Survivor_Memory_Unit)
+                                             25.502640   data arrival time
+
+                                100.000000  100.000000   clock clk (rise edge)
+                                  0.000000  100.000000   clock source latency
+     2    0.027129    0.095056    0.066777  100.066772 ^ clk (in)
+                                                         clk (net)
+                      0.095190    0.000000  100.066772 ^ clkbuf_0_clk/A (sky130_fd_sc_hd__clkbuf_16)
+     2    0.020316    0.032195    0.102290  100.169060 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                                         clknet_0_clk (net)
+                      0.032195    0.000263  100.169327 ^ clkbuf_1_1__f_clk/A (sky130_fd_sc_hd__clkbuf_16)
+     2    0.028932    0.037297    0.090949  100.260277 ^ clkbuf_1_1__f_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                                         clknet_1_1__leaf_clk (net)
+                      0.037303    0.000462  100.260735 ^ SMU_Top/clk (Survivor_Memory_Unit)
+                                 -0.250000  100.010742   clock uncertainty
+                                  0.000000  100.010742   clock reconvergence pessimism
+                                 -1.929030   98.081711   library setup time
+                                             98.081711   data required time
+---------------------------------------------------------------------------------------------
+                                             98.081711   data required time
+                                            -25.502640   data arrival time
+---------------------------------------------------------------------------------------------
+                                             72.579071   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= min_ff_n40C_1v95 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= min_ff_n40C_1v95 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 1 unannotated drivers.
+ clkload0/Y
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================

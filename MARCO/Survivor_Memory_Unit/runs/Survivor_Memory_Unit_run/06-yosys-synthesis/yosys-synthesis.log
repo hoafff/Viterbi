@@ -1,0 +1,1108 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)
+Loaded SDC plugin
+
+1. Executing Liberty frontend: /home/edabk/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+[INFO] Using SDC file '/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/runs/Survivor_Memory_Unit_run/06-yosys-synthesis/synthesis.abc.sdc' for ABC…
+
+2. Executing Verilog-2005 frontend: /home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Output_Register_Location.v
+Parsing SystemVerilog input from `/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Output_Register_Location.v' to AST representation.
+Storing AST representation for module `$abstract\Output_Register_Location'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Survivor_Memory_Unit.v
+Parsing SystemVerilog input from `/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Survivor_Memory_Unit.v' to AST representation.
+Storing AST representation for module `$abstract\Survivor_Memory_Unit'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v
+Parsing SystemVerilog input from `/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v' to AST representation.
+Storing AST representation for module `$abstract\Register_exchange'.
+Successfully finished Verilog frontend.
+
+5. Executing HIERARCHY pass (managing design hierarchy).
+
+6. Executing AST frontend in derive mode using pre-parsed AST for module `\Survivor_Memory_Unit'.
+Generating RTLIL representation for module `\Survivor_Memory_Unit'.
+
+6.1. Analyzing design hierarchy..
+Top module:  \Survivor_Memory_Unit
+
+6.2. Executing AST frontend in derive mode using pre-parsed AST for module `\Output_Register_Location'.
+Generating RTLIL representation for module `\Output_Register_Location'.
+
+6.3. Executing AST frontend in derive mode using pre-parsed AST for module `\Register_exchange'.
+Generating RTLIL representation for module `\Register_exchange'.
+Note: Assuming pure combinatorial block at /home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v:18.5-26.8 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+
+6.4. Analyzing design hierarchy..
+Top module:  \Survivor_Memory_Unit
+Used module:     \Output_Register_Location
+Used module:     \Register_exchange
+
+6.5. Analyzing design hierarchy..
+Top module:  \Survivor_Memory_Unit
+Used module:     \Output_Register_Location
+Used module:     \Register_exchange
+Removing unused module `$abstract\Register_exchange'.
+Removing unused module `$abstract\Survivor_Memory_Unit'.
+Removing unused module `$abstract\Output_Register_Location'.
+Removed 3 unused modules.
+Renaming module Survivor_Memory_Unit to Survivor_Memory_Unit.
+
+7. Generating Graphviz representation of design.
+Writing dot description to `/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/runs/Survivor_Memory_Unit_run/06-yosys-synthesis/hierarchy.dot'.
+Dumping module Survivor_Memory_Unit to page 1.
+
+8. Executing TRIBUF pass.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \Survivor_Memory_Unit
+Used module:     \Output_Register_Location
+Used module:     \Register_exchange
+
+9.2. Analyzing design hierarchy..
+Top module:  \Survivor_Memory_Unit
+Used module:     \Output_Register_Location
+Used module:     \Register_exchange
+Removed 0 unused modules.
+
+10. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+11. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 1 dead cases from process $proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Output_Register_Location.v:15$1 in module Output_Register_Location.
+Marked 2 switch rules as full_case in process $proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Output_Register_Location.v:15$1 in module Output_Register_Location.
+Marked 1 switch rules as full_case in process $proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v:28$8 in module Register_exchange.
+Removed a total of 1 dead cases.
+
+12. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 5 redundant assignments.
+Promoted 4 assignments to connections.
+
+13. Executing PROC_INIT pass (extract init attributes).
+
+14. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\Output_Register_Location.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Output_Register_Location.v:15$1'.
+Found async reset \rst_n in `\Register_exchange.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v:28$8'.
+
+15. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~1 debug messages>
+
+16. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\Output_Register_Location.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Output_Register_Location.v:15$1'.
+     1/1: $0\decoded_out[7:0]
+Creating decoders for process `\Register_exchange.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v:28$8'.
+     1/4: $0\path_11[7:0]
+     2/4: $0\path_10[7:0]
+     3/4: $0\path_01[7:0]
+     4/4: $0\path_00[7:0]
+Creating decoders for process `\Register_exchange.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v:18$3'.
+
+17. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\Register_exchange.\next_00' from process `\Register_exchange.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v:18$3'.
+No latch inferred for signal `\Register_exchange.\next_01' from process `\Register_exchange.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v:18$3'.
+No latch inferred for signal `\Register_exchange.\next_10' from process `\Register_exchange.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v:18$3'.
+No latch inferred for signal `\Register_exchange.\next_11' from process `\Register_exchange.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v:18$3'.
+
+18. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\Output_Register_Location.\decoded_out' using process `\Output_Register_Location.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Output_Register_Location.v:15$1'.
+  created $adff cell `$procdff$19' with positive edge clock and positive level reset.
+Creating register for signal `\Register_exchange.\path_00' using process `\Register_exchange.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v:28$8'.
+  created $adff cell `$procdff$24' with positive edge clock and positive level reset.
+Creating register for signal `\Register_exchange.\path_01' using process `\Register_exchange.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v:28$8'.
+  created $adff cell `$procdff$29' with positive edge clock and positive level reset.
+Creating register for signal `\Register_exchange.\path_10' using process `\Register_exchange.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v:28$8'.
+  created $adff cell `$procdff$34' with positive edge clock and positive level reset.
+Creating register for signal `\Register_exchange.\path_11' using process `\Register_exchange.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v:28$8'.
+  created $adff cell `$procdff$39' with positive edge clock and positive level reset.
+
+19. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+20. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\Output_Register_Location.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Output_Register_Location.v:15$1'.
+Removing empty process `Output_Register_Location.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Output_Register_Location.v:15$1'.
+Removing empty process `Register_exchange.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v:28$8'.
+Removing empty process `Register_exchange.$proc$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v:18$3'.
+Cleaned up 1 empty switch.
+
+21. Executing CHECK pass (checking for obvious problems).
+Checking module Survivor_Memory_Unit...
+Checking module Output_Register_Location...
+Checking module Register_exchange...
+Found and reported 0 problems.
+
+22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Survivor_Memory_Unit.
+Optimizing module Output_Register_Location.
+<suppressed ~3 debug messages>
+Optimizing module Register_exchange.
+<suppressed ~8 debug messages>
+
+23. Executing FLATTEN pass (flatten design).
+Deleting now unused module Output_Register_Location.
+Deleting now unused module Register_exchange.
+<suppressed ~2 debug messages>
+
+24. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Survivor_Memory_Unit.
+
+25. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Survivor_Memory_Unit..
+Removed 7 unused cells and 25 unused wires.
+<suppressed ~8 debug messages>
+
+26. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Survivor_Memory_Unit.
+
+27. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Survivor_Memory_Unit'.
+Removed a total of 0 cells.
+
+28. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Survivor_Memory_Unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+29. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Survivor_Memory_Unit.
+Performed a total of 0 changes.
+
+30. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Survivor_Memory_Unit'.
+Removed a total of 0 cells.
+
+31. Executing OPT_DFF pass (perform DFF optimizations).
+
+32. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Survivor_Memory_Unit..
+
+33. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Survivor_Memory_Unit.
+
+34. Executing FSM pass (extract and optimize FSM).
+
+34.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+34.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+34.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+34.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Survivor_Memory_Unit..
+
+34.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+34.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+34.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+34.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+35. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Survivor_Memory_Unit.
+
+36. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Survivor_Memory_Unit'.
+Removed a total of 0 cells.
+
+37. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Survivor_Memory_Unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+38. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Survivor_Memory_Unit.
+Performed a total of 0 changes.
+
+39. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Survivor_Memory_Unit'.
+Removed a total of 0 cells.
+
+40. Executing OPT_DFF pass (perform DFF optimizations).
+
+41. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Survivor_Memory_Unit..
+
+42. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Survivor_Memory_Unit.
+
+43. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 2) from port B of cell Survivor_Memory_Unit.$flatten\Output_Select_Inst.$procmux$13_CMP0 ($eq).
+
+44. Executing PEEPOPT pass (run peephole optimizers).
+
+45. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Survivor_Memory_Unit..
+
+46. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module Survivor_Memory_Unit:
+  created 0 $alu and 0 $macc cells.
+
+47. Executing SHARE pass (SAT-based resource sharing).
+
+48. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Survivor_Memory_Unit.
+
+49. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Survivor_Memory_Unit'.
+Removed a total of 0 cells.
+
+50. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Survivor_Memory_Unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+51. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Survivor_Memory_Unit.
+Performed a total of 0 changes.
+
+52. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Survivor_Memory_Unit'.
+Removed a total of 0 cells.
+
+53. Executing OPT_DFF pass (perform DFF optimizations).
+
+54. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Survivor_Memory_Unit..
+
+55. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Survivor_Memory_Unit.
+
+56. Executing MEMORY pass.
+
+56.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+56.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+56.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+56.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+56.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+56.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Survivor_Memory_Unit..
+
+56.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+56.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+56.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Survivor_Memory_Unit..
+
+56.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+57. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Survivor_Memory_Unit..
+
+58. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Survivor_Memory_Unit.
+<suppressed ~1 debug messages>
+
+59. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Survivor_Memory_Unit'.
+Removed a total of 0 cells.
+
+60. Executing OPT_DFF pass (perform DFF optimizations).
+
+61. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Survivor_Memory_Unit..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+62. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+63. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Survivor_Memory_Unit.
+
+64. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Survivor_Memory_Unit'.
+Removed a total of 0 cells.
+
+65. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Survivor_Memory_Unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+66. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Survivor_Memory_Unit.
+    Consolidated identical input bits for $mux cell $flatten\Reg_Exchange_Inst.$ternary$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v:19$4:
+      Old ports: A={ \Reg_Exchange_Inst.path_00 [6:0] 1'0 }, B={ \Reg_Exchange_Inst.path_01 [6:0] 1'0 }, Y=\Reg_Exchange_Inst.next_00
+      New ports: A=\Reg_Exchange_Inst.path_00 [6:0], B=\Reg_Exchange_Inst.path_01 [6:0], Y=\Reg_Exchange_Inst.next_00 [7:1]
+      New connections: \Reg_Exchange_Inst.next_00 [0] = 1'0
+    Consolidated identical input bits for $mux cell $flatten\Reg_Exchange_Inst.$ternary$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v:21$5:
+      Old ports: A={ \Reg_Exchange_Inst.path_10 [6:0] 1'0 }, B={ \Reg_Exchange_Inst.path_11 [6:0] 1'0 }, Y=\Reg_Exchange_Inst.next_01
+      New ports: A=\Reg_Exchange_Inst.path_10 [6:0], B=\Reg_Exchange_Inst.path_11 [6:0], Y=\Reg_Exchange_Inst.next_01 [7:1]
+      New connections: \Reg_Exchange_Inst.next_01 [0] = 1'0
+    Consolidated identical input bits for $mux cell $flatten\Reg_Exchange_Inst.$ternary$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v:23$6:
+      Old ports: A={ \Reg_Exchange_Inst.path_00 [6:0] 1'1 }, B={ \Reg_Exchange_Inst.path_01 [6:0] 1'1 }, Y=\Reg_Exchange_Inst.next_10
+      New ports: A=\Reg_Exchange_Inst.path_00 [6:0], B=\Reg_Exchange_Inst.path_01 [6:0], Y=\Reg_Exchange_Inst.next_10 [7:1]
+      New connections: \Reg_Exchange_Inst.next_10 [0] = 1'1
+    Consolidated identical input bits for $mux cell $flatten\Reg_Exchange_Inst.$ternary$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v:25$7:
+      Old ports: A={ \Reg_Exchange_Inst.path_10 [6:0] 1'1 }, B={ \Reg_Exchange_Inst.path_11 [6:0] 1'1 }, Y=\Reg_Exchange_Inst.next_11
+      New ports: A=\Reg_Exchange_Inst.path_10 [6:0], B=\Reg_Exchange_Inst.path_11 [6:0], Y=\Reg_Exchange_Inst.next_11 [7:1]
+      New connections: \Reg_Exchange_Inst.next_11 [0] = 1'1
+  Optimizing cells in module \Survivor_Memory_Unit.
+Performed a total of 4 changes.
+
+67. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Survivor_Memory_Unit'.
+Removed a total of 0 cells.
+
+68. Executing OPT_SHARE pass.
+
+69. Executing OPT_DFF pass (perform DFF optimizations).
+
+70. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Survivor_Memory_Unit..
+
+71. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Survivor_Memory_Unit.
+
+72. Rerunning OPT passes. (Maybe there is more to do…)
+
+73. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Survivor_Memory_Unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+74. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Survivor_Memory_Unit.
+Performed a total of 0 changes.
+
+75. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Survivor_Memory_Unit'.
+Removed a total of 0 cells.
+
+76. Executing OPT_SHARE pass.
+
+77. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $flatten\Reg_Exchange_Inst.$procdff$24 ($adff) from module Survivor_Memory_Unit.
+Setting constant 0-bit at position 0 on $flatten\Reg_Exchange_Inst.$procdff$29 ($adff) from module Survivor_Memory_Unit.
+
+78. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Survivor_Memory_Unit..
+
+79. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Survivor_Memory_Unit.
+
+80. Rerunning OPT passes. (Maybe there is more to do…)
+
+81. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Survivor_Memory_Unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+82. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Survivor_Memory_Unit.
+    Consolidated identical input bits for $mux cell $flatten\Reg_Exchange_Inst.$ternary$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v:19$4:
+      Old ports: A={ \Reg_Exchange_Inst.path_00 [6:1] 1'0 }, B={ \Reg_Exchange_Inst.path_01 [6:1] 1'0 }, Y=\Reg_Exchange_Inst.next_00 [7:1]
+      New ports: A=\Reg_Exchange_Inst.path_00 [6:1], B=\Reg_Exchange_Inst.path_01 [6:1], Y=\Reg_Exchange_Inst.next_00 [7:2]
+      New connections: \Reg_Exchange_Inst.next_00 [1] = 1'0
+    Consolidated identical input bits for $mux cell $flatten\Reg_Exchange_Inst.$ternary$/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/hdl/Register_exchange.v:23$6:
+      Old ports: A={ \Reg_Exchange_Inst.path_00 [6:1] 1'0 }, B={ \Reg_Exchange_Inst.path_01 [6:1] 1'0 }, Y=\Reg_Exchange_Inst.next_10 [7:1]
+      New ports: A=\Reg_Exchange_Inst.path_00 [6:1], B=\Reg_Exchange_Inst.path_01 [6:1], Y=\Reg_Exchange_Inst.next_10 [7:2]
+      New connections: \Reg_Exchange_Inst.next_10 [1] = 1'0
+  Optimizing cells in module \Survivor_Memory_Unit.
+Performed a total of 2 changes.
+
+83. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Survivor_Memory_Unit'.
+Removed a total of 0 cells.
+
+84. Executing OPT_SHARE pass.
+
+85. Executing OPT_DFF pass (perform DFF optimizations).
+
+86. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Survivor_Memory_Unit..
+
+87. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Survivor_Memory_Unit.
+
+88. Rerunning OPT passes. (Maybe there is more to do…)
+
+89. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Survivor_Memory_Unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+90. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Survivor_Memory_Unit.
+Performed a total of 0 changes.
+
+91. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Survivor_Memory_Unit'.
+Removed a total of 0 cells.
+
+92. Executing OPT_SHARE pass.
+
+93. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$42 ($adff) from module Survivor_Memory_Unit.
+Setting constant 0-bit at position 1 on $flatten\Reg_Exchange_Inst.$procdff$34 ($adff) from module Survivor_Memory_Unit.
+
+94. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Survivor_Memory_Unit..
+
+95. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Survivor_Memory_Unit.
+
+96. Rerunning OPT passes. (Maybe there is more to do…)
+
+97. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Survivor_Memory_Unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+98. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Survivor_Memory_Unit.
+Performed a total of 0 changes.
+
+99. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Survivor_Memory_Unit'.
+Removed a total of 0 cells.
+
+100. Executing OPT_SHARE pass.
+
+101. Executing OPT_DFF pass (perform DFF optimizations).
+
+102. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Survivor_Memory_Unit..
+
+103. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Survivor_Memory_Unit.
+
+104. Executing TECHMAP pass (map to technology primitives).
+
+104.1. Executing Verilog-2005 frontend: /nix/store/9r0bh7sp051dpm8km8bqlb028anpd3v3-yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nix/store/9r0bh7sp051dpm8km8bqlb028anpd3v3-yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+104.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$645fe0cc96ae5edb83bff90cc2c78f4a20ca3e3c\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $and.
+No more expansions possible.
+<suppressed ~112 debug messages>
+
+105. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Survivor_Memory_Unit.
+<suppressed ~10 debug messages>
+
+106. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Survivor_Memory_Unit'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+107. Executing OPT_DFF pass (perform DFF optimizations).
+
+108. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Survivor_Memory_Unit..
+Removed 0 unused cells and 45 unused wires.
+<suppressed ~1 debug messages>
+
+109. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Survivor_Memory_Unit.
+<suppressed ~2 debug messages>
+
+110. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Survivor_Memory_Unit'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+111. Executing OPT_DFF pass (perform DFF optimizations).
+
+112. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Survivor_Memory_Unit..
+
+113. Executing ABC pass (technology mapping using ABC).
+
+113.1. Extracting gate netlist of module `\Survivor_Memory_Unit' to `<abc-temp-dir>/input.blif'..
+Extracted 78 gates and 111 wires to a netlist network with 32 inputs and 32 outputs.
+
+113.1.1. Executing ABC.
+Running ABC command: "/nix/store/6l3aj1gi4lja8z5s4lan2k2cfz9mqkrz-yosys-abc/bin/abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+113.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        4
+ABC RESULTS:              NAND cells:        1
+ABC RESULTS:               NOR cells:        1
+ABC RESULTS:             ORNOT cells:        4
+ABC RESULTS:            ANDNOT cells:       23
+ABC RESULTS:                OR cells:       13
+ABC RESULTS:               MUX cells:       26
+ABC RESULTS:        internal signals:       47
+ABC RESULTS:           input signals:       32
+ABC RESULTS:          output signals:       32
+Removing temp directory.
+
+114. Executing OPT pass (performing simple optimizations).
+
+114.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Survivor_Memory_Unit.
+
+114.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Survivor_Memory_Unit'.
+Removed a total of 0 cells.
+
+114.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+114.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Survivor_Memory_Unit..
+Removed 0 unused cells and 80 unused wires.
+<suppressed ~1 debug messages>
+
+114.5. Finished fast OPT passes.
+
+115. Executing HIERARCHY pass (managing design hierarchy).
+
+115.1. Analyzing design hierarchy..
+Top module:  \Survivor_Memory_Unit
+
+115.2. Analyzing design hierarchy..
+Top module:  \Survivor_Memory_Unit
+Removed 0 unused modules.
+
+116. Executing CHECK pass (checking for obvious problems).
+Checking module Survivor_Memory_Unit...
+Found and reported 0 problems.
+
+117. Printing statistics.
+
+=== Survivor_Memory_Unit ===
+
+   Number of wires:                 75
+   Number of wire bits:            210
+   Number of public wires:          34
+   Number of public wire bits:     162
+   Number of ports:                  8
+   Number of port bits:             16
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                108
+     $_ANDNOT_                      23
+     $_AND_                          4
+     $_DFF_PN0_                     34
+     $_MUX_                         26
+     $_NAND_                         1
+     $_NOR_                          1
+     $_ORNOT_                        4
+     $_OR_                          13
+     $scopeinfo                      2
+
+118. Generating Graphviz representation of design.
+Writing dot description to `/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/runs/Survivor_Memory_Unit_run/06-yosys-synthesis/primitive_techmap.dot'.
+Dumping module Survivor_Memory_Unit to page 1.
+
+119. Executing OPT pass (performing simple optimizations).
+
+119.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Survivor_Memory_Unit.
+
+119.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Survivor_Memory_Unit'.
+Removed a total of 0 cells.
+
+119.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Survivor_Memory_Unit..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+119.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Survivor_Memory_Unit.
+Performed a total of 0 changes.
+
+119.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Survivor_Memory_Unit'.
+Removed a total of 0 cells.
+
+119.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+119.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Survivor_Memory_Unit..
+
+119.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Survivor_Memory_Unit.
+
+119.9. Finished OPT passes. (There is nothing left to do.)
+
+120. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Survivor_Memory_Unit..
+Removed 2 unused cells and 18 unused wires.
+<suppressed ~20 debug messages>
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/runs/Survivor_Memory_Unit_run/tmp/135ddcfdb2d84834adc9232906c1b7f2.lib ",
+   "modules": {
+      "\\Survivor_Memory_Unit": {
+         "num_wires":         57,
+         "num_wire_bits":     128,
+         "num_pub_wires":     16,
+         "num_pub_wire_bits": 80,
+         "num_ports":         8,
+         "num_port_bits":     16,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         106,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 23,
+            "$_AND_": 4,
+            "$_DFF_PN0_": 34,
+            "$_MUX_": 26,
+            "$_NAND_": 1,
+            "$_NOR_": 1,
+            "$_ORNOT_": 4,
+            "$_OR_": 13
+         }
+      }
+   },
+      "design": {
+         "num_wires":         57,
+         "num_wire_bits":     128,
+         "num_pub_wires":     16,
+         "num_pub_wire_bits": 80,
+         "num_ports":         8,
+         "num_port_bits":     16,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         106,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 23,
+            "$_AND_": 4,
+            "$_DFF_PN0_": 34,
+            "$_MUX_": 26,
+            "$_NAND_": 1,
+            "$_NOR_": 1,
+            "$_ORNOT_": 4,
+            "$_OR_": 13
+         }
+      }
+}
+
+121. Printing statistics.
+
+=== Survivor_Memory_Unit ===
+
+   Number of wires:                 57
+   Number of wire bits:            128
+   Number of public wires:          16
+   Number of public wire bits:      80
+   Number of ports:                  8
+   Number of port bits:             16
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                106
+     $_ANDNOT_                      23
+     $_AND_                          4
+     $_DFF_PN0_                     34
+     $_MUX_                         26
+     $_NAND_                         1
+     $_NOR_                          1
+     $_ORNOT_                        4
+     $_OR_                          13
+
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_DFF_PN0_ is unknown!
+
+[INFO] Applying tri-state buffer mapping from '/home/edabk/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v'…
+
+122. Executing TECHMAP pass (map to technology primitives).
+
+122.1. Executing Verilog-2005 frontend: /home/edabk/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/home/edabk/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+122.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+123. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+[INFO] Applying latch mapping from '/home/edabk/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v'…
+
+124. Executing TECHMAP pass (map to technology primitives).
+
+124.1. Executing Verilog-2005 frontend: /home/edabk/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/home/edabk/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+124.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+125. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+126. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+126.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\Survivor_Memory_Unit':
+  mapped 34 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_2 cells.
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/runs/Survivor_Memory_Unit_run/tmp/135ddcfdb2d84834adc9232906c1b7f2.lib ",
+   "modules": {
+      "\\Survivor_Memory_Unit": {
+         "num_wires":         57,
+         "num_wire_bits":     128,
+         "num_pub_wires":     16,
+         "num_pub_wire_bits": 80,
+         "num_ports":         8,
+         "num_port_bits":     16,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         106,
+         "area":              893.356800,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 23,
+            "$_AND_": 4,
+            "$_MUX_": 26,
+            "$_NAND_": 1,
+            "$_NOR_": 1,
+            "$_ORNOT_": 4,
+            "$_OR_": 13,
+            "sky130_fd_sc_hd__dfrtp_2": 34
+         }
+      }
+   },
+      "design": {
+         "num_wires":         57,
+         "num_wire_bits":     128,
+         "num_pub_wires":     16,
+         "num_pub_wire_bits": 80,
+         "num_ports":         8,
+         "num_port_bits":     16,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         106,
+         "area":              893.356800,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 23,
+            "$_AND_": 4,
+            "$_MUX_": 26,
+            "$_NAND_": 1,
+            "$_NOR_": 1,
+            "$_ORNOT_": 4,
+            "$_OR_": 13,
+            "sky130_fd_sc_hd__dfrtp_2": 34
+         }
+      }
+}
+
+127. Printing statistics.
+
+=== Survivor_Memory_Unit ===
+
+   Number of wires:                 57
+   Number of wire bits:            128
+   Number of public wires:          16
+   Number of public wire bits:      80
+   Number of ports:                  8
+   Number of port bits:             16
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                106
+     $_ANDNOT_                      23
+     $_AND_                          4
+     $_MUX_                         26
+     $_NAND_                         1
+     $_NOR_                          1
+     $_ORNOT_                        4
+     $_OR_                          13
+     sky130_fd_sc_hd__dfrtp_2       34
+
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+
+   Chip area for module '\Survivor_Memory_Unit': 893.356800
+     of which used for sequential elements: 893.356800 (100.00%)
+
+[INFO] Using generated ABC script '/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/runs/Survivor_Memory_Unit_run/06-yosys-synthesis/AREA_0.abc'…
+
+128. Executing ABC pass (technology mapping using ABC).
+
+128.1. Extracting gate netlist of module `\Survivor_Memory_Unit' to `/tmp/yosys-abc-1FVQ2S/input.blif'..
+Extracted 72 gates and 104 wires to a netlist network with 32 inputs and 32 outputs.
+
+128.1.1. Executing ABC.
+Running ABC command: "/nix/store/6l3aj1gi4lja8z5s4lan2k2cfz9mqkrz-yosys-abc/bin/abc" -s -f /tmp/yosys-abc-1FVQ2S/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-1FVQ2S/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-1FVQ2S/input.blif 
+ABC: + read_lib -w /home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/runs/Survivor_Memory_Unit_run/tmp/135ddcfdb2d84834adc9232906c1b7f2.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.04 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/runs/Survivor_Memory_Unit_run/tmp/135ddcfdb2d84834adc9232906c1b7f2.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.07 sec
+ABC: Memory =    9.54 MB. Time =     0.07 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/runs/Survivor_Memory_Unit_run/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2/Y".
+ABC: Setting output load to be 33.442001.
+ABC: + source /home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/runs/Survivor_Memory_Unit_run/06-yosys-synthesis/AREA_0.abc 
+ABC: Error: The network is combinational.
+ABC: Cannot find the default PI driving cell (sky130_fd_sc_hd__inv_2/Y) in the library.
+ABC: WireLoad = "none"  Gates =     53 (  0.0 %)   Cap = 16.4 ff ( 10.4 %)   Area =      530.51 ( 60.4 %)   Delay =   748.41 ps  ( 18.9 %)               
+ABC: Path  0 --      26 : 0   23 pi                       A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  43.8 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --      97 : 3    1 sky130_fd_sc_hd__and3b_2 A =  10.01  Df = 197.6  -17.8 ps  S =  41.9 ps  Cin =  1.5 ff  Cout =   2.5 ff  Cmax = 309.5 ff  G =  161  
+ABC: Path  2 --     101 : 5    1 sky130_fd_sc_hd__o41a_2  A =  12.51  Df = 748.4 -308.7 ps  S = 179.4 ps  Cin =  2.4 ff  Cout =  33.4 ff  Cmax = 305.8 ff  G = 1420  
+ABC: Start-point = pi25 (\winner_state [0]).  End-point = po27 ($flatten\Output_Select_Inst.$procmux$10.Y [4]).
+ABC: netlist                       : i/o =   32/   32  lat =    0  nd =    53  edge =    160  area =530.54  delay = 2.00  lev = 2
+ABC: + write_blif /tmp/yosys-abc-1FVQ2S/output.blif 
+
+128.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__mux2_1 cells:       20
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__mux4_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or3_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__and3b_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__and3_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__and2b_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__o41a_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:        6
+ABC RESULTS:        internal signals:       40
+ABC RESULTS:           input signals:       32
+ABC RESULTS:          output signals:       32
+Removing temp directory.
+
+129. Executing SETUNDEF pass (replace undef values with defined constants).
+
+130. Executing HILOMAP pass (mapping to constant drivers).
+
+131. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+132. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Survivor_Memory_Unit..
+Removed 10 unused cells and 128 unused wires.
+<suppressed ~25 debug messages>
+
+133. Executing INSBUF pass (insert buffer cells for connected wires).
+
+134. Executing CHECK pass (checking for obvious problems).
+Checking module Survivor_Memory_Unit...
+Found and reported 0 problems.
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/edabk/Desktop/Tu67/MARCO_ultra/Survivor_Memory_Unit/runs/Survivor_Memory_Unit_run/tmp/135ddcfdb2d84834adc9232906c1b7f2.lib ",
+   "modules": {
+      "\\Survivor_Memory_Unit": {
+         "num_wires":         88,
+         "num_wire_bits":     96,
+         "num_pub_wires":     58,
+         "num_pub_wire_bits": 66,
+         "num_ports":         8,
+         "num_port_bits":     16,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         88,
+         "area":              1427.619200,
+         "num_cells_by_type": {
+            "sky130_fd_sc_hd__and2_2": 6,
+            "sky130_fd_sc_hd__and2b_2": 5,
+            "sky130_fd_sc_hd__and3_2": 5,
+            "sky130_fd_sc_hd__and3b_2": 5,
+            "sky130_fd_sc_hd__conb_1": 1,
+            "sky130_fd_sc_hd__dfrtp_2": 34,
+            "sky130_fd_sc_hd__mux2_1": 20,
+            "sky130_fd_sc_hd__mux4_2": 1,
+            "sky130_fd_sc_hd__nor2_2": 1,
+            "sky130_fd_sc_hd__o41a_2": 5,
+            "sky130_fd_sc_hd__or3_2": 5
+         }
+      }
+   },
+      "design": {
+         "num_wires":         88,
+         "num_wire_bits":     96,
+         "num_pub_wires":     58,
+         "num_pub_wire_bits": 66,
+         "num_ports":         8,
+         "num_port_bits":     16,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         88,
+         "area":              1427.619200,
+         "num_cells_by_type": {
+            "sky130_fd_sc_hd__and2_2": 6,
+            "sky130_fd_sc_hd__and2b_2": 5,
+            "sky130_fd_sc_hd__and3_2": 5,
+            "sky130_fd_sc_hd__and3b_2": 5,
+            "sky130_fd_sc_hd__conb_1": 1,
+            "sky130_fd_sc_hd__dfrtp_2": 34,
+            "sky130_fd_sc_hd__mux2_1": 20,
+            "sky130_fd_sc_hd__mux4_2": 1,
+            "sky130_fd_sc_hd__nor2_2": 1,
+            "sky130_fd_sc_hd__o41a_2": 5,
+            "sky130_fd_sc_hd__or3_2": 5
+         }
+      }
+}
+
+135. Printing statistics.
+
+=== Survivor_Memory_Unit ===
+
+   Number of wires:                 88
+   Number of wire bits:             96
+   Number of public wires:          58
+   Number of public wire bits:      66
+   Number of ports:                  8
+   Number of port bits:             16
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 88
+     sky130_fd_sc_hd__and2_2         6
+     sky130_fd_sc_hd__and2b_2        5
+     sky130_fd_sc_hd__and3_2         5
+     sky130_fd_sc_hd__and3b_2        5
+     sky130_fd_sc_hd__conb_1         1
+     sky130_fd_sc_hd__dfrtp_2       34
+     sky130_fd_sc_hd__mux2_1        20
+     sky130_fd_sc_hd__mux4_2         1
+     sky130_fd_sc_hd__nor2_2         1
+     sky130_fd_sc_hd__o41a_2         5
+     sky130_fd_sc_hd__or3_2          5
+
+   Chip area for module '\Survivor_Memory_Unit': 1427.619200
+     of which used for sequential elements: 893.356800 (62.58%)
+
+136. Executing Verilog backend.
+Dumping module `\Survivor_Memory_Unit'.
+
+137. Executing JSON backend.

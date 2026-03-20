@@ -1,0 +1,78 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+Startpoint: received[0] (input port clocked by clk)
+Endpoint: SMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                  0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (propagated)
+                                 20.000000   20.000000 ^ input external delay
+     1    0.015413    0.075272    0.051593   20.051594 ^ received[0] (in)
+                                                         received[0] (net)
+                      0.075281    0.000000   20.051594 ^ BMU/received[0] (Branch_Metrics)
+     1    0.011048    0.101084    1.507379   21.558971 ^ BMU/bm_10_11[0] (Branch_Metrics)
+                                                         bm_10_11[0] (net)
+                      0.101084    0.000185   21.559156 ^ PMU_Top/bm_10_11[0] (Path_Metric_Unit)
+     1    0.007268    0.075180    3.836208   25.395365 ^ PMU_Top/servivor_select_11 (Path_Metric_Unit)
+                                                         servivor_select_11 (net)
+                      0.075180    0.000078   25.395443 ^ SMU_Top/survivor_select_11 (Survivor_Memory_Unit)
+                                             25.395443   data arrival time
+
+                                100.000000  100.000000   clock clk (rise edge)
+                                  0.000000  100.000000   clock source latency
+     3    0.071154    0.322413    0.225135  100.225136 ^ clk (in)
+                                                         clk (net)
+                      0.322586    0.000000  100.225136 ^ SMU_Top/clk (Survivor_Memory_Unit)
+                                 -0.250000   99.975136   clock uncertainty
+                                  0.000000   99.975136   clock reconvergence pessimism
+                                 -1.929030   98.046104   library setup time
+                                             98.046104   data required time
+---------------------------------------------------------------------------------------------
+                                             98.046104   data required time
+                                            -25.395443   data arrival time
+---------------------------------------------------------------------------------------------
+                                             72.650658   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 0 unannotated drivers.
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+Writing metric design__max_slew_violation__count__corner:nom_tt_025C_1v80: 0
+max fanout violation count 0
+Writing metric design__max_fanout_violation__count__corner:nom_tt_025C_1v80: 0
+max cap violation count 0
+Writing metric design__max_cap_violation__count__corner:nom_tt_025C_1v80: 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================

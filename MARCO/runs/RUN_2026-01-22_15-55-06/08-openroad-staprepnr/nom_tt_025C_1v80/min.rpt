@@ -1,0 +1,1105 @@
+
+===========================================================================
+report_checks -path_delay min (Hold)
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+Startpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Endpoint: SMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.150000    0.000000    0.000000 ^ PMU_Top/clk (Path_Metric_Unit)
+     1    0.003600    0.056713    4.445699    4.445699 ^ PMU_Top/servivor_select_10 (Path_Metric_Unit)
+                                                         servivor_select_10 (net)
+                      0.056713    0.000000    4.445699 ^ SMU_Top/survivor_select_10 (Survivor_Memory_Unit)
+                                              4.445699   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ SMU_Top/clk (Survivor_Memory_Unit)
+                                 -0.136400    0.113600   library hold time
+                                              0.113600   data required time
+---------------------------------------------------------------------------------------------
+                                              0.113600   data required time
+                                             -4.445699   data arrival time
+---------------------------------------------------------------------------------------------
+                                              4.332099   slack (MET)
+
+
+Startpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Endpoint: SMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.150000    0.000000    0.000000 ^ PMU_Top/clk (Path_Metric_Unit)
+     1    0.003400    0.047429    4.390032    4.390032 v PMU_Top/servivor_select_01 (Path_Metric_Unit)
+                                                         servivor_select_01 (net)
+                      0.047429    0.000000    4.390032 v SMU_Top/survivor_select_01 (Survivor_Memory_Unit)
+                                              4.390032   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ SMU_Top/clk (Survivor_Memory_Unit)
+                                 -0.203400    0.046600   library hold time
+                                              0.046600   data required time
+---------------------------------------------------------------------------------------------
+                                              0.046600   data required time
+                                             -4.390032   data arrival time
+---------------------------------------------------------------------------------------------
+                                              4.343432   slack (MET)
+
+
+Startpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Endpoint: SMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.150000    0.000000    0.000000 ^ PMU_Top/clk (Path_Metric_Unit)
+     1    0.003500    0.047855    4.570683    4.570683 v PMU_Top/servivor_select_00 (Path_Metric_Unit)
+                                                         servivor_select_00 (net)
+                      0.047855    0.000000    4.570683 v SMU_Top/survivor_select_00 (Survivor_Memory_Unit)
+                                              4.570683   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ SMU_Top/clk (Survivor_Memory_Unit)
+                                 -0.200960    0.049040   library hold time
+                                              0.049040   data required time
+---------------------------------------------------------------------------------------------
+                                              0.049040   data required time
+                                             -4.570683   data arrival time
+---------------------------------------------------------------------------------------------
+                                              4.521644   slack (MET)
+
+
+Startpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Endpoint: SMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.150000    0.000000    0.000000 ^ PMU_Top/clk (Path_Metric_Unit)
+     1    0.005100    0.064056    1.817630    1.817630 ^ PMU_Top/current_metric_00[0] (Path_Metric_Unit)
+                                                         pm_00[0] (net)
+                      0.064056    0.000000    1.817630 ^ MPM/prev_00[0] (Maximum_Path_Memory)
+     1    0.003500    0.056491    3.220182    5.037813 ^ MPM/winner_state[1] (Maximum_Path_Memory)
+                                                         winner_state[1] (net)
+                      0.056491    0.000000    5.037813 ^ SMU_Top/winner_state[1] (Survivor_Memory_Unit)
+                                              5.037813   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ SMU_Top/clk (Survivor_Memory_Unit)
+                                 -0.333880   -0.083880   library hold time
+                                             -0.083880   data required time
+---------------------------------------------------------------------------------------------
+                                             -0.083880   data required time
+                                             -5.037813   data arrival time
+---------------------------------------------------------------------------------------------
+                                              5.121693   slack (MET)
+
+
+Startpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Endpoint: SMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.150000    0.000000    0.000000 ^ PMU_Top/clk (Path_Metric_Unit)
+     1    0.005100    0.064056    1.817630    1.817630 ^ PMU_Top/current_metric_00[0] (Path_Metric_Unit)
+                                                         pm_00[0] (net)
+                      0.064056    0.000000    1.817630 ^ MPM/prev_00[0] (Maximum_Path_Memory)
+     1    0.003500    0.052350    3.681304    5.498934 ^ MPM/winner_state[0] (Maximum_Path_Memory)
+                                                         winner_state[0] (net)
+                      0.052350    0.000000    5.498934 ^ SMU_Top/winner_state[0] (Survivor_Memory_Unit)
+                                              5.498934   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ SMU_Top/clk (Survivor_Memory_Unit)
+                                 -0.369560   -0.119560   library hold time
+                                             -0.119560   data required time
+---------------------------------------------------------------------------------------------
+                                             -0.119560   data required time
+                                             -5.498934   data arrival time
+---------------------------------------------------------------------------------------------
+                                              5.618495   slack (MET)
+
+
+Startpoint: rst_n (input port clocked by clk)
+Endpoint: CTRL (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 ^ input external delay
+     3    0.009700    0.051349    0.032992   20.032993 ^ rst_n (in)
+                                                         rst_n (net)
+                      0.051349    0.000000   20.032993 ^ CTRL/rst_n (Controller)
+                                             20.032993   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ CTRL/clk (Controller)
+                                  0.873700    1.123700   library hold time
+                                              1.123700   data required time
+---------------------------------------------------------------------------------------------
+                                              1.123700   data required time
+                                            -20.032993   data arrival time
+---------------------------------------------------------------------------------------------
+                                             18.909292   slack (MET)
+
+
+Startpoint: rst_n (input port clocked by clk)
+Endpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 ^ input external delay
+     3    0.009700    0.051349    0.032992   20.032993 ^ rst_n (in)
+                                                         rst_n (net)
+                      0.051349    0.000000   20.032993 ^ PMU_Top/rst_n (Path_Metric_Unit)
+                                             20.032993   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ PMU_Top/clk (Path_Metric_Unit)
+                                  0.662210    0.912210   library hold time
+                                              0.912210   data required time
+---------------------------------------------------------------------------------------------
+                                              0.912210   data required time
+                                            -20.032993   data arrival time
+---------------------------------------------------------------------------------------------
+                                             19.120783   slack (MET)
+
+
+Startpoint: rst_n (input port clocked by clk)
+Endpoint: SMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 ^ input external delay
+     3    0.009700    0.051349    0.032992   20.032993 ^ rst_n (in)
+                                                         rst_n (net)
+                      0.051349    0.000000   20.032993 ^ SMU_Top/rst_n (Survivor_Memory_Unit)
+                                             20.032993   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ SMU_Top/clk (Survivor_Memory_Unit)
+                                  0.619050    0.869050   library hold time
+                                              0.869050   data required time
+---------------------------------------------------------------------------------------------
+                                              0.869050   data required time
+                                            -20.032993   data arrival time
+---------------------------------------------------------------------------------------------
+                                             19.163942   slack (MET)
+
+
+Startpoint: start (input port clocked by clk)
+Endpoint: CTRL (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 v input external delay
+     1    0.002700    0.008707    0.004240   20.004240 v start (in)
+                                                         start (net)
+                      0.008707    0.000000   20.004240 v CTRL/start (Controller)
+                                             20.004240   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ CTRL/clk (Controller)
+                                 -0.229960    0.020040   library hold time
+                                              0.020040   data required time
+---------------------------------------------------------------------------------------------
+                                              0.020040   data required time
+                                            -20.004240   data arrival time
+---------------------------------------------------------------------------------------------
+                                             19.984200   slack (MET)
+
+
+Startpoint: start (input port clocked by clk)
+Endpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 ^ input external delay
+     1    0.002700    0.019995    0.009939   20.009939 ^ start (in)
+                                                         start (net)
+                      0.019995    0.000000   20.009939 ^ CTRL/start (Controller)
+     1    0.004200    0.051071    0.745324   20.755262 v CTRL/clr_me (Controller)
+                                                         clr_me (net)
+                      0.051071    0.000000   20.755262 v PMU_Top/clr_me (Path_Metric_Unit)
+                                             20.755262   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ PMU_Top/clk (Path_Metric_Unit)
+                                 -0.490950   -0.240950   library hold time
+                                             -0.240950   data required time
+---------------------------------------------------------------------------------------------
+                                             -0.240950   data required time
+                                            -20.755262   data arrival time
+---------------------------------------------------------------------------------------------
+                                             20.996214   slack (MET)
+
+
+Startpoint: received[1] (input port clocked by clk)
+Endpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 v input external delay
+     1    0.002900    0.009183    0.004576   20.004576 v received[1] (in)
+                                                         received[1] (net)
+                      0.009183    0.000000   20.004576 v BMU/received[1] (Branch_Metrics)
+     1    0.003300    0.047032    1.089777   21.094353 v BMU/bm_10_01[0] (Branch_Metrics)
+                                                         bm_10_01[0] (net)
+                      0.047032    0.000000   21.094353 v PMU_Top/bm_10_01[0] (Path_Metric_Unit)
+                                             21.094353   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ PMU_Top/clk (Path_Metric_Unit)
+                                 -0.412560   -0.162560   library hold time
+                                             -0.162560   data required time
+---------------------------------------------------------------------------------------------
+                                             -0.162560   data required time
+                                            -21.094353   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.256914   slack (MET)
+
+
+Startpoint: received[0] (input port clocked by clk)
+Endpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 ^ input external delay
+     1    0.002900    0.020897    0.010639   20.010639 ^ received[0] (in)
+                                                         received[0] (net)
+                      0.020897    0.000000   20.010639 ^ BMU/received[0] (Branch_Metrics)
+     1    0.004200    0.057313    0.998117   21.008757 ^ BMU/bm_10_01[1] (Branch_Metrics)
+                                                         bm_10_01[1] (net)
+                      0.057313    0.000000   21.008757 ^ PMU_Top/bm_10_01[1] (Path_Metric_Unit)
+                                             21.008757   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ PMU_Top/clk (Path_Metric_Unit)
+                                 -0.609510   -0.359510   library hold time
+                                             -0.359510   data required time
+---------------------------------------------------------------------------------------------
+                                             -0.359510   data required time
+                                            -21.008757   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.368265   slack (MET)
+
+
+Startpoint: received[1] (input port clocked by clk)
+Endpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 ^ input external delay
+     1    0.002900    0.020897    0.010639   20.010639 ^ received[1] (in)
+                                                         received[1] (net)
+                      0.020897    0.000000   20.010639 ^ BMU/received[1] (Branch_Metrics)
+     1    0.003400    0.047396    0.849138   20.859777 v BMU/bm_00_10[1] (Branch_Metrics)
+                                                         bm_00_10[1] (net)
+                      0.047396    0.000000   20.859777 v PMU_Top/bm_00_10[1] (Path_Metric_Unit)
+                                             20.859777   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ PMU_Top/clk (Path_Metric_Unit)
+                                 -0.801560   -0.551560   library hold time
+                                             -0.551560   data required time
+---------------------------------------------------------------------------------------------
+                                             -0.551560   data required time
+                                            -20.859777   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.411337   slack (MET)
+
+
+Startpoint: received[1] (input port clocked by clk)
+Endpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 v input external delay
+     1    0.002900    0.009183    0.004576   20.004576 v received[1] (in)
+                                                         received[1] (net)
+                      0.009183    0.000000   20.004576 v BMU/received[1] (Branch_Metrics)
+     1    0.004500    0.052470    1.242485   21.247061 v BMU/bm_11_11[0] (Branch_Metrics)
+                                                         bm_11_11[0] (net)
+                      0.052470    0.000000   21.247061 v PMU_Top/bm_11_11[0] (Path_Metric_Unit)
+                                             21.247061   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ PMU_Top/clk (Path_Metric_Unit)
+                                 -0.455470   -0.205470   library hold time
+                                             -0.205470   data required time
+---------------------------------------------------------------------------------------------
+                                             -0.205470   data required time
+                                            -21.247061   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.452532   slack (MET)
+
+
+Startpoint: received[1] (input port clocked by clk)
+Endpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 v input external delay
+     1    0.002900    0.009183    0.004576   20.004576 v received[1] (in)
+                                                         received[1] (net)
+                      0.009183    0.000000   20.004576 v BMU/received[1] (Branch_Metrics)
+     1    0.003200    0.046516    1.247697   21.252274 v BMU/bm_01_00[0] (Branch_Metrics)
+                                                         bm_01_00[0] (net)
+                      0.046516    0.000000   21.252274 v PMU_Top/bm_01_00[0] (Path_Metric_Unit)
+                                             21.252274   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ PMU_Top/clk (Path_Metric_Unit)
+                                 -0.452940   -0.202940   library hold time
+                                             -0.202940   data required time
+---------------------------------------------------------------------------------------------
+                                             -0.202940   data required time
+                                            -21.252274   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.455214   slack (MET)
+
+
+Startpoint: SMU_Top (rising edge-triggered flip-flop clocked by clk)
+Endpoint: decoded_out[1] (output port clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.150000    0.000000    0.000000 ^ SMU_Top/clk (Survivor_Memory_Unit)
+     1    0.034142    0.275151    1.771462    1.771462 ^ SMU_Top/decoded_out[1] (Survivor_Memory_Unit)
+                                                         decoded_out[1] (net)
+                      0.275151    0.000000    1.771462 ^ decoded_out[1] (out)
+                                              1.771462   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                -20.000000  -19.750002   output external delay
+                                            -19.750002   data required time
+---------------------------------------------------------------------------------------------
+                                            -19.750002   data required time
+                                             -1.771462   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.521463   slack (MET)
+
+
+Startpoint: SMU_Top (rising edge-triggered flip-flop clocked by clk)
+Endpoint: decoded_out[0] (output port clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.150000    0.000000    0.000000 ^ SMU_Top/clk (Survivor_Memory_Unit)
+     1    0.034342    0.276636    1.771493    1.771493 ^ SMU_Top/decoded_out[0] (Survivor_Memory_Unit)
+                                                         decoded_out[0] (net)
+                      0.276636    0.000000    1.771493 ^ decoded_out[0] (out)
+                                              1.771493   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                -20.000000  -19.750002   output external delay
+                                            -19.750002   data required time
+---------------------------------------------------------------------------------------------
+                                            -19.750002   data required time
+                                             -1.771493   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.521494   slack (MET)
+
+
+Startpoint: received[1] (input port clocked by clk)
+Endpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 ^ input external delay
+     1    0.002900    0.020897    0.010639   20.010639 ^ received[1] (in)
+                                                         received[1] (net)
+                      0.020897    0.000000   20.010639 ^ BMU/received[1] (Branch_Metrics)
+     1    0.003600    0.048349    0.986214   20.996853 v BMU/bm_01_00[1] (Branch_Metrics)
+                                                         bm_01_00[1] (net)
+                      0.048349    0.000000   20.996853 v PMU_Top/bm_01_00[1] (Path_Metric_Unit)
+                                             20.996853   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ PMU_Top/clk (Path_Metric_Unit)
+                                 -0.774660   -0.524660   library hold time
+                                             -0.524660   data required time
+---------------------------------------------------------------------------------------------
+                                             -0.524660   data required time
+                                            -20.996853   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.521513   slack (MET)
+
+
+Startpoint: SMU_Top (rising edge-triggered flip-flop clocked by clk)
+Endpoint: decoded_out[3] (output port clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.150000    0.000000    0.000000 ^ SMU_Top/clk (Survivor_Memory_Unit)
+     1    0.033942    0.273670    1.773141    1.773141 ^ SMU_Top/decoded_out[3] (Survivor_Memory_Unit)
+                                                         decoded_out[3] (net)
+                      0.273670    0.000000    1.773141 ^ decoded_out[3] (out)
+                                              1.773141   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                -20.000000  -19.750002   output external delay
+                                            -19.750002   data required time
+---------------------------------------------------------------------------------------------
+                                            -19.750002   data required time
+                                             -1.773141   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.523144   slack (MET)
+
+
+Startpoint: received[1] (input port clocked by clk)
+Endpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 v input external delay
+     1    0.002900    0.009183    0.004576   20.004576 v received[1] (in)
+                                                         received[1] (net)
+                      0.009183    0.000000   20.004576 v BMU/received[1] (Branch_Metrics)
+     1    0.003900    0.049723    1.254565   21.259140 v BMU/bm_00_10[0] (Branch_Metrics)
+                                                         bm_00_10[0] (net)
+                      0.049723    0.000000   21.259140 v PMU_Top/bm_00_10[0] (Path_Metric_Unit)
+                                             21.259140   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ PMU_Top/clk (Path_Metric_Unit)
+                                 -0.514200   -0.264200   library hold time
+                                             -0.264200   data required time
+---------------------------------------------------------------------------------------------
+                                             -0.264200   data required time
+                                            -21.259140   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.523340   slack (MET)
+
+
+Startpoint: SMU_Top (rising edge-triggered flip-flop clocked by clk)
+Endpoint: decoded_out[4] (output port clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.150000    0.000000    0.000000 ^ SMU_Top/clk (Survivor_Memory_Unit)
+     1    0.034142    0.275169    1.783398    1.783398 ^ SMU_Top/decoded_out[4] (Survivor_Memory_Unit)
+                                                         decoded_out[4] (net)
+                      0.275169    0.000000    1.783398 ^ decoded_out[4] (out)
+                                              1.783398   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                -20.000000  -19.750002   output external delay
+                                            -19.750002   data required time
+---------------------------------------------------------------------------------------------
+                                            -19.750002   data required time
+                                             -1.783398   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.533400   slack (MET)
+
+
+Startpoint: SMU_Top (rising edge-triggered flip-flop clocked by clk)
+Endpoint: decoded_out[7] (output port clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.150000    0.000000    0.000000 ^ SMU_Top/clk (Survivor_Memory_Unit)
+     1    0.034542    0.278142    1.788136    1.788136 ^ SMU_Top/decoded_out[7] (Survivor_Memory_Unit)
+                                                         decoded_out[7] (net)
+                      0.278142    0.000000    1.788136 ^ decoded_out[7] (out)
+                                              1.788136   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                -20.000000  -19.750002   output external delay
+                                            -19.750002   data required time
+---------------------------------------------------------------------------------------------
+                                            -19.750002   data required time
+                                             -1.788136   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.538137   slack (MET)
+
+
+Startpoint: SMU_Top (rising edge-triggered flip-flop clocked by clk)
+Endpoint: decoded_out[2] (output port clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.150000    0.000000    0.000000 ^ SMU_Top/clk (Survivor_Memory_Unit)
+     1    0.034042    0.274444    1.789250    1.789250 ^ SMU_Top/decoded_out[2] (Survivor_Memory_Unit)
+                                                         decoded_out[2] (net)
+                      0.274444    0.000000    1.789250 ^ decoded_out[2] (out)
+                                              1.789250   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                -20.000000  -19.750002   output external delay
+                                            -19.750002   data required time
+---------------------------------------------------------------------------------------------
+                                            -19.750002   data required time
+                                             -1.789250   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.539251   slack (MET)
+
+
+Startpoint: SMU_Top (rising edge-triggered flip-flop clocked by clk)
+Endpoint: decoded_out[5] (output port clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.150000    0.000000    0.000000 ^ SMU_Top/clk (Survivor_Memory_Unit)
+     1    0.034142    0.275186    1.792510    1.792510 ^ SMU_Top/decoded_out[5] (Survivor_Memory_Unit)
+                                                         decoded_out[5] (net)
+                      0.275186    0.000000    1.792510 ^ decoded_out[5] (out)
+                                              1.792510   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                -20.000000  -19.750002   output external delay
+                                            -19.750002   data required time
+---------------------------------------------------------------------------------------------
+                                            -19.750002   data required time
+                                             -1.792510   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.542513   slack (MET)
+
+
+Startpoint: SMU_Top (rising edge-triggered flip-flop clocked by clk)
+Endpoint: decoded_out[6] (output port clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.150000    0.000000    0.000000 ^ SMU_Top/clk (Survivor_Memory_Unit)
+     1    0.034242    0.275932    1.800318    1.800318 ^ SMU_Top/decoded_out[6] (Survivor_Memory_Unit)
+                                                         decoded_out[6] (net)
+                      0.275932    0.000000    1.800318 ^ decoded_out[6] (out)
+                                              1.800318   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                -20.000000  -19.750002   output external delay
+                                            -19.750002   data required time
+---------------------------------------------------------------------------------------------
+                                            -19.750002   data required time
+                                             -1.800318   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.550320   slack (MET)
+
+
+Startpoint: received[1] (input port clocked by clk)
+Endpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 v input external delay
+     1    0.002900    0.009183    0.004576   20.004576 v received[1] (in)
+                                                         received[1] (net)
+                      0.009183    0.000000   20.004576 v BMU/received[1] (Branch_Metrics)
+     1    0.007400    0.064707    1.132149   21.136724 v BMU/bm_00_00[0] (Branch_Metrics)
+                                                         bm_00_00[0] (net)
+                      0.064707    0.000000   21.136724 v PMU_Top/bm_00_00[0] (Path_Metric_Unit)
+                                             21.136724   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ PMU_Top/clk (Path_Metric_Unit)
+                                 -0.666930   -0.416930   library hold time
+                                             -0.416930   data required time
+---------------------------------------------------------------------------------------------
+                                             -0.416930   data required time
+                                            -21.136724   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.553656   slack (MET)
+
+
+Startpoint: received[1] (input port clocked by clk)
+Endpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 ^ input external delay
+     1    0.002900    0.020897    0.010639   20.010639 ^ received[1] (in)
+                                                         received[1] (net)
+                      0.020897    0.000000   20.010639 ^ BMU/received[1] (Branch_Metrics)
+     1    0.003300    0.050906    0.995513   21.006151 ^ BMU/bm_10_11[1] (Branch_Metrics)
+                                                         bm_10_11[1] (net)
+                      0.050906    0.000000   21.006151 ^ PMU_Top/bm_10_11[1] (Path_Metric_Unit)
+                                             21.006151   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ PMU_Top/clk (Path_Metric_Unit)
+                                 -0.880750   -0.630750   library hold time
+                                             -0.630750   data required time
+---------------------------------------------------------------------------------------------
+                                             -0.630750   data required time
+                                            -21.006151   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.636902   slack (MET)
+
+
+Startpoint: received[1] (input port clocked by clk)
+Endpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 v input external delay
+     1    0.002900    0.009183    0.004576   20.004576 v received[1] (in)
+                                                         received[1] (net)
+                      0.009183    0.000000   20.004576 v BMU/received[1] (Branch_Metrics)
+     1    0.004000    0.050181    1.229326   21.233902 v BMU/bm_10_11[0] (Branch_Metrics)
+                                                         bm_10_11[0] (net)
+                      0.050181    0.000000   21.233902 v PMU_Top/bm_10_11[0] (Path_Metric_Unit)
+                                             21.233902   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ PMU_Top/clk (Path_Metric_Unit)
+                                 -0.656780   -0.406780   library hold time
+                                             -0.406780   data required time
+---------------------------------------------------------------------------------------------
+                                             -0.406780   data required time
+                                            -21.233902   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.640682   slack (MET)
+
+
+Startpoint: received[1] (input port clocked by clk)
+Endpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 v input external delay
+     1    0.002900    0.009183    0.004576   20.004576 v received[1] (in)
+                                                         received[1] (net)
+                      0.009183    0.000000   20.004576 v BMU/received[1] (Branch_Metrics)
+     1    0.003200    0.046516    1.229383   21.233959 v BMU/bm_11_01[0] (Branch_Metrics)
+                                                         bm_11_01[0] (net)
+                      0.046516    0.000000   21.233959 v PMU_Top/bm_11_01[0] (Path_Metric_Unit)
+                                             21.233959   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ PMU_Top/clk (Path_Metric_Unit)
+                                 -0.680380   -0.430380   library hold time
+                                             -0.430380   data required time
+---------------------------------------------------------------------------------------------
+                                             -0.430380   data required time
+                                            -21.233959   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.664339   slack (MET)
+
+
+Startpoint: received[1] (input port clocked by clk)
+Endpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 v input external delay
+     1    0.002900    0.009183    0.004576   20.004576 v received[1] (in)
+                                                         received[1] (net)
+                      0.009183    0.000000   20.004576 v BMU/received[1] (Branch_Metrics)
+     1    0.004200    0.051094    1.257453   21.262030 v BMU/bm_01_10[0] (Branch_Metrics)
+                                                         bm_01_10[0] (net)
+                      0.051094    0.000000   21.262030 v PMU_Top/bm_01_10[0] (Path_Metric_Unit)
+                                             21.262030   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ PMU_Top/clk (Path_Metric_Unit)
+                                 -0.689930   -0.439930   library hold time
+                                             -0.439930   data required time
+---------------------------------------------------------------------------------------------
+                                             -0.439930   data required time
+                                            -21.262030   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.701960   slack (MET)
+
+
+Startpoint: received[0] (input port clocked by clk)
+Endpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 ^ input external delay
+     1    0.002900    0.020897    0.010639   20.010639 ^ received[0] (in)
+                                                         received[0] (net)
+                      0.020897    0.000000   20.010639 ^ BMU/received[0] (Branch_Metrics)
+     1    0.006700    0.075269    1.101174   21.111813 ^ BMU/bm_00_00[1] (Branch_Metrics)
+                                                         bm_00_00[1] (net)
+                      0.075269    0.000000   21.111813 ^ PMU_Top/bm_00_00[1] (Path_Metric_Unit)
+                                             21.111813   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ PMU_Top/clk (Path_Metric_Unit)
+                                 -0.860720   -0.610720   library hold time
+                                             -0.610720   data required time
+---------------------------------------------------------------------------------------------
+                                             -0.610720   data required time
+                                            -21.111813   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.722534   slack (MET)
+
+
+Startpoint: received[0] (input port clocked by clk)
+Endpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 v input external delay
+     1    0.002900    0.009183    0.004576   20.004576 v received[0] (in)
+                                                         received[0] (net)
+                      0.009183    0.000000   20.004576 v BMU/received[0] (Branch_Metrics)
+     1    0.006300    0.060166    1.240400   21.244976 v BMU/bm_11_11[1] (Branch_Metrics)
+                                                         bm_11_11[1] (net)
+                      0.060166    0.000000   21.244976 v PMU_Top/bm_11_11[1] (Path_Metric_Unit)
+                                             21.244976   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ PMU_Top/clk (Path_Metric_Unit)
+                                 -0.784660   -0.534660   library hold time
+                                             -0.534660   data required time
+---------------------------------------------------------------------------------------------
+                                             -0.534660   data required time
+                                            -21.244976   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.779636   slack (MET)
+
+
+Startpoint: received[1] (input port clocked by clk)
+Endpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 ^ input external delay
+     1    0.002900    0.020897    0.010639   20.010639 ^ received[1] (in)
+                                                         received[1] (net)
+                      0.020897    0.000000   20.010639 ^ BMU/received[1] (Branch_Metrics)
+     1    0.003900    0.055149    1.171195   21.181833 ^ BMU/bm_11_01[1] (Branch_Metrics)
+                                                         bm_11_01[1] (net)
+                      0.055149    0.000000   21.181833 ^ PMU_Top/bm_11_01[1] (Path_Metric_Unit)
+                                             21.181833   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ PMU_Top/clk (Path_Metric_Unit)
+                                 -0.926290   -0.676290   library hold time
+                                             -0.676290   data required time
+---------------------------------------------------------------------------------------------
+                                             -0.676290   data required time
+                                            -21.181833   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.858124   slack (MET)
+
+
+Startpoint: received[0] (input port clocked by clk)
+Endpoint: PMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 v input external delay
+     1    0.002900    0.009183    0.004576   20.004576 v received[0] (in)
+                                                         received[0] (net)
+                      0.009183    0.000000   20.004576 v BMU/received[0] (Branch_Metrics)
+     1    0.003300    0.046974    1.192976   21.197554 v BMU/bm_01_10[1] (Branch_Metrics)
+                                                         bm_01_10[1] (net)
+                      0.046974    0.000000   21.197554 v PMU_Top/bm_01_10[1] (Path_Metric_Unit)
+                                             21.197554   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ PMU_Top/clk (Path_Metric_Unit)
+                                 -0.934690   -0.684690   library hold time
+                                             -0.684690   data required time
+---------------------------------------------------------------------------------------------
+                                             -0.684690   data required time
+                                            -21.197554   data arrival time
+---------------------------------------------------------------------------------------------
+                                             21.882242   slack (MET)
+
+
+Startpoint: CTRL (rising edge-triggered flip-flop clocked by clk)
+Endpoint: frame_done (output port clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.150000    0.000000    0.000000 ^ CTRL/clk (Controller)
+     1    0.033942    0.167349    2.341228    2.341228 v CTRL/frame_done (Controller)
+                                                         frame_done (net)
+                      0.167349    0.000000    2.341228 v frame_done (out)
+                                              2.341228   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                -20.000000  -19.750002   output external delay
+                                            -19.750002   data required time
+---------------------------------------------------------------------------------------------
+                                            -19.750002   data required time
+                                             -2.341228   data arrival time
+---------------------------------------------------------------------------------------------
+                                             22.091228   slack (MET)
+
+
+Startpoint: received[1] (input port clocked by clk)
+Endpoint: SMU_Top (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 20.000000   20.000000 ^ input external delay
+     1    0.002900    0.020897    0.010639   20.010639 ^ received[1] (in)
+                                                         received[1] (net)
+                      0.020897    0.000000   20.010639 ^ BMU/received[1] (Branch_Metrics)
+     1    0.003300    0.050906    0.995513   21.006151 ^ BMU/bm_10_11[1] (Branch_Metrics)
+                                                         bm_10_11[1] (net)
+                      0.050906    0.000000   21.006151 ^ PMU_Top/bm_10_11[1] (Path_Metric_Unit)
+     1    0.003400    0.047396    3.005068   24.011221 v PMU_Top/servivor_select_11 (Path_Metric_Unit)
+                                                         servivor_select_11 (net)
+                      0.047396    0.000000   24.011221 v SMU_Top/survivor_select_11 (Survivor_Memory_Unit)
+                                             24.011221   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                              0.250000 ^ SMU_Top/clk (Survivor_Memory_Unit)
+                                 -0.158820    0.091180   library hold time
+                                              0.091180   data required time
+---------------------------------------------------------------------------------------------
+                                              0.091180   data required time
+                                            -24.011221   data arrival time
+---------------------------------------------------------------------------------------------
+                                             23.920040   slack (MET)
+
+
+
