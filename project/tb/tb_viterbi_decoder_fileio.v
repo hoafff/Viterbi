@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module tb_viterbi_decoder_basic;
+module tb_viterbi_decoder_fileio;
 
     reg         clk;
     reg         rst_n;
@@ -11,6 +11,17 @@ module tb_viterbi_decoder_basic;
 
     integer pass_count;
     integer fail_count;
+    integer total_count;
+
+    integer fin;
+    integer fout;
+    integer r1;
+    integer r2;
+
+    reg [15:0] encoded_frame;
+    reg [7:0]  expected_data;
+
+    integer cycle_count;
 
     localparam integer EXPECTED_LATENCY = 18;
 
@@ -27,7 +38,7 @@ module tb_viterbi_decoder_basic;
     );
 
     // -------------------------------------------------------------------------
-    // 10 ns clock
+    // Clock: 10 ns
     // -------------------------------------------------------------------------
     initial begin
         clk = 1'b0;
@@ -35,38 +46,7 @@ module tb_viterbi_decoder_basic;
     end
 
     // -------------------------------------------------------------------------
-    // Reference convolutional encoder
-    //
-    // Convention:
-    //   src[0] is the first bit in time
-    //   first encoded pair goes to i_data[15:14]
-    // -------------------------------------------------------------------------
-    function [15:0] ref_encode;
-        input [7:0] src;
-        integer k;
-        reg s0, s1;
-        reg u;
-        reg out1, out2;
-        begin
-            ref_encode = 16'h0000;
-            s0 = 1'b0;
-            s1 = 1'b0;
-
-            for (k = 0; k < 8; k = k + 1) begin
-                u    = src[k];
-                out1 = u ^ s0 ^ s1; // g1 = 111
-                out2 = u ^ s1;      // g2 = 101
-
-                ref_encode[15 - 2*k -: 2] = {out1, out2};
-
-                s1 = s0;
-                s0 = u;
-            end
-        end
-    endfunction
-
-    // -------------------------------------------------------------------------
-    // Reset task
+    // Reset
     // -------------------------------------------------------------------------
     task automatic apply_reset;
         begin
@@ -84,13 +64,13 @@ module tb_viterbi_decoder_basic;
     endtask
 
     // -------------------------------------------------------------------------
-    // Send one encoded frame, en pulse = 1 cycle
+    // Send one frame
     // -------------------------------------------------------------------------
     task automatic send_frame;
-        input [15:0] encoded_frame;
+        input [15:0] frame_in;
         begin
             @(negedge clk);
-            i_data = encoded_frame;
+            i_data = frame_in;
             en     = 1'b1;
 
             @(negedge clk);
@@ -99,15 +79,11 @@ module tb_viterbi_decoder_basic;
     endtask
 
     // -------------------------------------------------------------------------
-    // Wait for done, check exact latency and output data
-    //
-    // Because send_frame returns after the acceptance edge already happened,
-    // counting from the next posedge gives the expected latency directly.
+    // Wait for done and check one case
     // -------------------------------------------------------------------------
     task automatic wait_done_and_check;
-        input [7:0]  expected_data;
-        input [15:0] encoded_frame;
-        integer cycle_count;
+        input [15:0] frame_in;
+        input [7:0]  golden_out;
         begin
             cycle_count = 0;
 
@@ -118,34 +94,30 @@ module tb_viterbi_decoder_basic;
             end
 
             if (cycle_count >= 200) begin
-                $display("[FAIL] Timeout waiting o_done. encoded=%h expected=%h",
-                         encoded_frame, expected_data);
+                $display("[FAIL] Timeout. encoded=%h expected=%h", frame_in, golden_out);
                 fail_count = fail_count + 1;
             end
             else begin
                 if (cycle_count !== EXPECTED_LATENCY) begin
                     $display("[FAIL] Latency mismatch. encoded=%h expected_latency=%0d got=%0d",
-                             encoded_frame, EXPECTED_LATENCY, cycle_count);
+                             frame_in, EXPECTED_LATENCY, cycle_count);
                     fail_count = fail_count + 1;
                 end
-
-                if (o_data !== expected_data) begin
+                else if (o_data !== golden_out) begin
                     $display("[FAIL] Data mismatch. encoded=%h expected=%h got=%h",
-                             encoded_frame, expected_data, o_data);
+                             frame_in, golden_out, o_data);
                     fail_count = fail_count + 1;
                 end
-                else if (cycle_count === EXPECTED_LATENCY) begin
+                else begin
                     $display("[PASS] encoded=%h decoded=%h latency=%0d",
-                             encoded_frame, o_data, cycle_count);
+                             frame_in, o_data, cycle_count);
                     pass_count = pass_count + 1;
                 end
 
-                // o_done must be exactly 1 cycle
                 @(posedge clk);
                 #1;
                 if (o_done !== 1'b0) begin
-                    $display("[FAIL] o_done is not a 1-cycle pulse. encoded=%h",
-                             encoded_frame);
+                    $display("[FAIL] o_done is not 1-cycle. encoded=%h", frame_in);
                     fail_count = fail_count + 1;
                 end
             end
@@ -153,53 +125,62 @@ module tb_viterbi_decoder_basic;
     endtask
 
     // -------------------------------------------------------------------------
-    // Run one testcase from 8-bit source data
-    // -------------------------------------------------------------------------
-    task automatic run_case;
-        input [7:0] src_data;
-        reg   [15:0] encoded_frame;
-        begin
-            encoded_frame = ref_encode(src_data);
-
-            $display("------------------------------------------------------------");
-            $display("[INFO] src_data=%h encoded_frame=%h", src_data, encoded_frame);
-
-            send_frame(encoded_frame);
-            wait_done_and_check(src_data, encoded_frame);
-
-            repeat (2) @(posedge clk);
-            #1;
-        end
-    endtask
-
-    // -------------------------------------------------------------------------
-    // Main test sequence
+    // Main
     // -------------------------------------------------------------------------
     initial begin
-        pass_count = 0;
-        fail_count = 0;
+        pass_count  = 0;
+        fail_count  = 0;
+        total_count = 0;
 
-        $dumpfile("dump.vcd");
-        $dumpvars(0, tb_viterbi_decoder_basic);
+        $dumpfile("dump_fileio.vcd");
+        $dumpvars(0, tb_viterbi_decoder_fileio);
 
         apply_reset();
 
-        // Smoke tests
-        run_case(8'h00);
-        run_case(8'hFF);
-        run_case(8'hAA);
-        run_case(8'h55);
-        run_case(8'h81);
-        run_case(8'h3C);
+        fin  = $fopen("input.txt",  "r");
+        fout = $fopen("output.txt", "r");
+
+        if (fin == 0) begin
+            $display("[FATAL] Cannot open input.txt");
+            $finish;
+        end
+
+        if (fout == 0) begin
+            $display("[FATAL] Cannot open output.txt");
+            $finish;
+        end
+
+        while (!$feof(fin) && !$feof(fout)) begin
+            r1 = $fscanf(fin,  "%b\n", encoded_frame);
+            r2 = $fscanf(fout, "%b\n", expected_data);
+
+            if ((r1 == 1) && (r2 == 1)) begin
+                total_count = total_count + 1;
+
+                $display("------------------------------------------------------------");
+                $display("[INFO] case=%0d encoded=%h expected=%h",
+                         total_count, encoded_frame, expected_data);
+
+                send_frame(encoded_frame);
+                wait_done_and_check(encoded_frame, expected_data);
+
+                repeat (2) @(posedge clk);
+                #1;
+            end
+        end
+
+        $fclose(fin);
+        $fclose(fout);
 
         $display("============================================================");
-        $display("[SUMMARY] PASS=%0d FAIL=%0d", pass_count, fail_count);
+        $display("[SUMMARY] TOTAL=%0d PASS=%0d FAIL=%0d",
+                 total_count, pass_count, fail_count);
         $display("============================================================");
 
         if (fail_count == 0)
-            $display("[TB RESULT] ALL SMOKE TESTS PASSED");
+            $display("[TB RESULT] ALL FILE-BASED TESTS PASSED");
         else
-            $display("[TB RESULT] SOME TESTS FAILED");
+            $display("[TB RESULT] SOME FILE-BASED TESTS FAILED");
 
         #20;
         $finish;
