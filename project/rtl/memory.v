@@ -17,36 +17,33 @@ module memory (
     output reg  [1:0] o_prev_st_11
 );
 
-    reg [1:0] mem00 [0:7];
-    reg [1:0] mem01 [0:7];
-    reg [1:0] mem10 [0:7];
-    reg [1:0] mem11 [0:7];
+    reg [7:0] pred_mem [0:7];
 
-    integer idx;
-
-    always @(posedge clk or negedge rst_n) begin
-        if (!rst_n) begin
-            for (idx = 0; idx < 8; idx = idx + 1) begin
-                mem00[idx] <= 2'b00;
-                mem01[idx] <= 2'b00;
-                mem10[idx] <= 2'b00;
-                mem11[idx] <= 2'b00;
-            end
-        end
-        else if (en_mem_wr && !en_mem_rd) begin
-            mem00[i_wr_idx] <= i_prev_st_00;
-            mem01[i_wr_idx] <= i_prev_st_01;
-            mem10[i_wr_idx] <= i_prev_st_10;
-            mem11[i_wr_idx] <= i_prev_st_11;
+    always @(posedge clk) begin
+        if (en_mem_wr && !en_mem_rd) begin
+            pred_mem[i_wr_idx] <= {
+                i_prev_st_11,
+                i_prev_st_10,
+                i_prev_st_01,
+                i_prev_st_00
+            };
         end
     end
 
     always @(*) begin
-        if (en_mem_rd && !en_mem_wr) begin
-            o_prev_st_00 = mem00[i_rd_idx];
-            o_prev_st_01 = mem01[i_rd_idx];
-            o_prev_st_10 = mem10[i_rd_idx];
-            o_prev_st_11 = mem11[i_rd_idx];
+        if (!rst_n) begin
+            o_prev_st_00 = 2'b00;
+            o_prev_st_01 = 2'b00;
+            o_prev_st_10 = 2'b00;
+            o_prev_st_11 = 2'b00;
+        end
+        else if (en_mem_rd && !en_mem_wr) begin
+            {
+                o_prev_st_11,
+                o_prev_st_10,
+                o_prev_st_01,
+                o_prev_st_00
+            } = pred_mem[i_rd_idx];
         end
         else begin
             o_prev_st_00 = 2'b00;

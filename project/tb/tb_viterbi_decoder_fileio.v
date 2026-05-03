@@ -23,7 +23,7 @@ module tb_viterbi_decoder_fileio;
 
     integer cycle_count;
 
-    localparam integer EXPECTED_LATENCY = 18;
+    localparam integer EXPECTED_LATENCY = 17;
 
     // -------------------------------------------------------------------------
     // DUT
@@ -42,7 +42,7 @@ module tb_viterbi_decoder_fileio;
     // -------------------------------------------------------------------------
     initial begin
         clk = 1'b0;
-        forever #5 clk = ~clk;
+        forever #2.78 clk = ~clk;
     end
 
     // -------------------------------------------------------------------------
@@ -137,16 +137,16 @@ module tb_viterbi_decoder_fileio;
 
         apply_reset();
 
-        fin  = $fopen("input.txt",  "r");
-        fout = $fopen("output.txt", "r");
+        fin  = $fopen("Viterbi_output_error.txt", "r");
+        fout = $fopen("Viterbi_input_error.txt",  "r");
 
         if (fin == 0) begin
-            $display("[FATAL] Cannot open input.txt");
+            $display("[FATAL] Cannot open Viterbi_output_error.txt");
             $finish;
         end
 
         if (fout == 0) begin
-            $display("[FATAL] Cannot open output.txt");
+            $display("[FATAL] Cannot open Viterbi_input_error.txt");
             $finish;
         end
 

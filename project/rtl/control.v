@@ -56,8 +56,11 @@ module control (
         case (state)
             ST_IDLE: begin
                 o_busy = 1'b0;
+
                 if (en) begin
-                    next_state   = ST_LOAD;
+                    ld_buf       = 1'b1;
+                    o_busy       = 1'b1;
+                    next_state   = ST_FORWARD;
                     next_sym_idx = 3'd0;
                     next_tb_idx  = 3'd7;
                 end

@@ -12,9 +12,9 @@ module tb_viterbi_decoder_basic;
     integer pass_count;
     integer fail_count;
 
-    localparam integer EXPECTED_LATENCY = 18;
+    localparam integer EXPECTED_LATENCY = 17;
 
-    // -------------------------------------------------------------------------
+    // -------------------------------------------- -----------------------------
     // DUT
     // -------------------------------------------------------------------------
     viterbi_decoder dut (
@@ -31,14 +31,14 @@ module tb_viterbi_decoder_basic;
     // -------------------------------------------------------------------------
     initial begin
         clk = 1'b0;
-        forever #5 clk = ~clk;
+        forever #2.78 clk = ~clk;
     end
 
     // -------------------------------------------------------------------------
     // Reference convolutional encoder
     //
     // Convention:
-    //   src[0] is the first bit in time
+    //   src[7] is the first bit in time
     //   first encoded pair goes to i_data[15:14]
     // -------------------------------------------------------------------------
     function [15:0] ref_encode;
@@ -53,9 +53,9 @@ module tb_viterbi_decoder_basic;
             s1 = 1'b0;
 
             for (k = 0; k < 8; k = k + 1) begin
-                u    = src[k];
-                out1 = u ^ s0 ^ s1; // g1 = 111
-                out2 = u ^ s1;      // g2 = 101
+                u    = src[7-k];      // MSB is first bit in time
+                out1 = u ^ s0 ^ s1;  // g1 = 111
+                out2 = u ^ s1;       // g2 = 101
 
                 ref_encode[15 - 2*k -: 2] = {out1, out2};
 
